@@ -40,4 +40,3 @@ document.write("document.write(\"        <hr>\");");
 document.write("document.write(\"    </body>\");");
 document.write("document.write(\"</html>\");");
 document.write("");
-
