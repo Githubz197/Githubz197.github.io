@@ -45,3 +45,9 @@ body:after {
   padding: 0 60px;
   border-radius: 25px;
 }
+
+.p-1:hover {
+  background-color: #ffffff;
+  background-size: 10px 10px;
+  background-image: repeating-linear-gradient(45deg, #c8dfff 0, #c8dfff 1px, #ffffff 0, #ffffff 50%);
+}
