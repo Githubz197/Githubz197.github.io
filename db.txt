@@ -1,7 +1,7 @@
 >>Persona 4
-Yukiko||https://megamitensei.fandom.com/wiki/Yukiko_Amagi||BlazBlue_Cross_Tag_Battle_Yukiko_Amagi_Main.png
-Rise-Chan||https://megamitensei.fandom.com/wiki/Rise_Kujikawa||9fc0beda57589abc818454cf1df85a7d.jpg
-Chie||https://megamitensei.fandom.com/wiki/Chie_Satonaka||Persona-4-Golden-Chie-Chariot-Confidant-Thumb.jpg
+Yukiko||https://megamitensei.fandom.com/wiki/Yukiko_Amagi||ShortPixel/BlazBlue_Cross_Tag_Battle_Yukiko_Amagi_Main.png
+Rise-Chan||https://megamitensei.fandom.com/wiki/Rise_Kujikawa||/ShortPixel/9fc0beda57589abc818454cf1df85a7d.jpg
+Chie||https://megamitensei.fandom.com/wiki/Chie_Satonaka||/ShortPixel/Persona-4-Golden-Chie-Chariot-Confidant-Thumb.jpg
 Naoto||https://megamitensei.fandom.com/wiki/Social_Link/Naoto_Shirogane||https://static.wikia.nocookie.net/megamitensei/images/7/7d/Naoto_Shirogane_Winter_uniform.png/revision/latest?cb=20201214211603
 <<
 
