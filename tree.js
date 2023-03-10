@@ -37,6 +37,21 @@ document.write("              <img class=\"rounded\" src=\"https://badiali.es/as
 document.write("              <span class=\"flex-grow-1\">Listado con Bootstrap estilo Masonry sin JS</span>");
 document.write("            </a>");
 document.write("          </li>");
+
+document.write("          <li class=\"list-group-item p-1\">");
+document.write("            <a target=\"_blank\" rel=\"noopener noreferrer\" class=\"stretched-link d-flex align-items-center text-center\" href=\"https://dev.to/badiali/bootstrap-4-masonry-layout-js-25d2\" title=\"Listado con Bootstrap estilo Masonry sin JS | Luis Badiali\">");
+document.write("              <img class=\"rounded\" src=\"https://badiali.es/assets/img/thumbs/masonry.png\" alt=\"DEV.to | Artículos Luis Badiali\">");
+document.write("              <span class=\"flex-grow-1\">Listado con Bootstrap estilo Masonry sin JS</span>");
+document.write("            </a>");
+document.write("          </li>");
+
+document.write("          <li class=\"list-group-item p-1\">");
+document.write("            <a target=\"_blank\" rel=\"noopener noreferrer\" class=\"stretched-link d-flex align-items-center text-center\" href=\"https://dev.to/badiali/bootstrap-4-masonry-layout-js-25d2\" title=\"Listado con Bootstrap estilo Masonry sin JS | Luis Badiali\">");
+document.write("              <img class=\"rounded\" src=\"https://badiali.es/assets/img/thumbs/masonry.png\" alt=\"DEV.to | Artículos Luis Badiali\">");
+document.write("              <span class=\"flex-grow-1\">Listado con Bootstrap estilo Masonry sin JS</span>");
+document.write("            </a>");
+document.write("          </li>");
+
 document.write("        </ul>");
 document.write("      </div>");
 document.write("      <div class=\"card w-100 border-0 shadow mt-3\">");
