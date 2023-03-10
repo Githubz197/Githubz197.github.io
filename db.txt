@@ -11,7 +11,7 @@ Square||cuadro.com|square123.png
 <<
 
 >>Facts
-Fact 1||tri.com||angle.jpeg
+Fact 1 de mil||tri.com||angle.jpeg
 Fact 2||https://tina.com||https://i.pinimg/hello.jpg
 Facts Vale||Vale.com||https://i.pinimg.com/280x280_RS/43/37/92/4337921fba1690fc6f037fe7297595ba.jpg
 <<
