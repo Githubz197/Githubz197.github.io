@@ -1,14 +1,14 @@
 >>Persona 4
-Yukiko||https://megamitensei.fandom.com/wiki/Yukiko_Amagi||https://blazblue.wiki/images/0/08/BlazBlue_Cross_Tag_Battle_Yukiko_Amagi_Main.png
-Rise-Chan||https://megamitensei.fandom.com/wiki/Rise_Kujikawa||https://i.pinimg.com/736x/9f/c0/be/9fc0beda57589abc818454cf1df85a7d.jpg
-Chie||https://megamitensei.fandom.com/wiki/Chie_Satonaka||https://underbuffed.com/wp-content/uploads/2020/06/Persona-4-Golden-Chie-Chariot-Confidant-Thumb.jpg
+Yukiko||https://megamitensei.fandom.com/wiki/Yukiko_Amagi||BlazBlue_Cross_Tag_Battle_Yukiko_Amagi_Main.png
+Rise-Chan||https://megamitensei.fandom.com/wiki/Rise_Kujikawa||9fc0beda57589abc818454cf1df85a7d.jpg
+Chie||https://megamitensei.fandom.com/wiki/Chie_Satonaka||Persona-4-Golden-Chie-Chariot-Confidant-Thumb.jpg
 Naoto||https://megamitensei.fandom.com/wiki/Social_Link/Naoto_Shirogane||https://static.wikia.nocookie.net/megamitensei/images/7/7d/Naoto_Shirogane_Winter_uniform.png/revision/latest?cb=20201214211603
 <<
 
 >>A que la v...
-Pichus||tri.com||https://upload.wikimedia.org/wikipedia/en/a/aa/Pichu_artwork.png
+Pichus||tri.com||Pichu_artwork.png
 La Vale||https://tina.com||https://i.pinimg.com/280x280_RS/43/37/92/4337921fba1690fc6f037fe7297595ba.jpg
-Humanos||cuadro.com||https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Luigi_emblem.svg/225px-Luigi_emblem.svg.png
+Humanos||cuadro.com||225px-Luigi_emblem.svg.png
 <<
 
 >>Twitch
