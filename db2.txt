@@ -1,14 +1,14 @@
 >>Emails
-Emails||https://savepostage.com/images/ql-icon.png||https://notepad.pw/markdown/hoN2JdB3W6sHeORyo9nu
+Emails||https://notepad.pw/markdown/hoN2JdB3W6sHeORyo9nu||https://savepostage.com/images/ql-icon.png
 <<
 
 >>Image Tools
-Extract Pics||https://extract.pics/img/apple-icon.png||https://extract.pics
-Image OCR||xxx||https://www.imagetotext.info
-Image OCR 2||zzz||Texthttps://brandfolder.com/workbench/extract-text-from-image
+Extract Pics||https://extract.pics||https://extract.pics/img/apple-icon.png
+Image OCR||https://www.imagetotext.info||xxx
+Image OCR 2||https://brandfolder.com/workbench/extract-text-from-image||zzz
 <<
 
 >>Pronunciation
-Link 1||a||https://forvo.com
-Link 2||b||https://youglish.com
+Link 1||https://forvo.com||a
+Link 2||https://youglish.com||b
 <<
