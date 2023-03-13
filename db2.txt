@@ -2,6 +2,12 @@
 Emails||https://notepad.pw/markdown/hoN2JdB3W6sHeORyo9nu||https://savepostage.com/images/ql-icon.png
 <<
 
+>>Tools
+TransferKit (FileCoin||https://transferkit.io||a
+Reverse Dictionary ES/EN||https://www.onelook.com/thesaurus||b
+DropMeFiles (Share)||https://dropmefiles.com||c
+<<
+
 >>Image Tools
 Extract Pics||https://extract.pics||https://extract.pics/img/apple-icon.png
 Image OCR||https://www.imagetotext.info||https://www.imagetotext.info/web_assets/frontend/img/logo.svg
