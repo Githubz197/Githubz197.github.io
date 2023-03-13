@@ -12,3 +12,9 @@ Image OCR 2||https://brandfolder.com/workbench/extract-text-from-image||zzz
 Link 1||https://forvo.com||a
 Link 2||https://youglish.com||b
 <<
+
+>>Teens
+Anna Gloss||https://www.youtube.com/@annagloss8711/videos
+Mari Kruchkova||https://www.youtube.com/@MariKruchkova/videos||https://assets.puzzlefactory.pl/puzzle/436/946/original.webp
+Sarah Roy||https://www.youtube.com/@SarahRoy13/videos||Linktree2/SarahRoy.jpg
+<<
