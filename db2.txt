@@ -4,17 +4,17 @@ Emails||https://notepad.pw/markdown/hoN2JdB3W6sHeORyo9nu||https://savepostage.co
 
 >>Image Tools
 Extract Pics||https://extract.pics||https://extract.pics/img/apple-icon.png
-Image OCR||https://www.imagetotext.info||xxx
-Image OCR 2||https://brandfolder.com/workbench/extract-text-from-image||zzz
+Image OCR||https://www.imagetotext.info||https://www.imagetotext.info/web_assets/frontend/img/logo.svg
+Image OCR 2||https://brandfolder.com/workbench/extract-text-from-image||https://cdn.bfldr.com/I6FML9WY/at/puqsjh-ad7lbs-ei1hlp/brandfolder-icon-purple.svg
 <<
 
 >>Pronunciation
 Link 1||https://forvo.com||a
-Link 2||https://youglish.com||b
+Link 2||https://youglish.com||https://youglish.com/images/brandyg.png
 <<
 
 >>Teens
-Anna Gloss||https://www.youtube.com/@annagloss8711/videos
+Anna Gloss||https://www.youtube.com/@annagloss8711/videos||https://styles.redditmedia.com/t5_6fkf4i/styles/communityIcon_irptymv5md0a1.png
 Mari Kruchkova||https://www.youtube.com/@MariKruchkova/videos||https://assets.puzzlefactory.pl/puzzle/436/946/original.webp
 Sarah Roy||https://www.youtube.com/@SarahRoy13/videos||Linktree2/SarahRoy.jpg
 <<
