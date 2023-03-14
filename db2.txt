@@ -2,16 +2,16 @@
 Emails||https://notepad.pw/markdown/hoN2JdB3W6sHeORyo9nu||https://savepostage.com/images/ql-icon.png
 <<
 
->>Tools
-TransferKit (FileCoin)||https://transferkit.io||https://cdn-icons-png.flaticon.com/64/4926/4926562.png
-Reverse Dictionary ES/EN||https://www.onelook.com/thesaurus||https://cdn-icons-png.flaticon.com/64/439/439842.png
-DropMeFiles (Share)||https://dropmefiles.com||https://dropmefiles.com/images/uploader/arrow.png
-<<
-
 >>Misc
 StillTasty (Food)||https://www.stilltasty.com||https://cdn-icons-png.flaticon.com/64/1147/1147832.png
 Rome2Rio (Train)||https://www.rome2rio.com||https://cdn-icons-png.flaticon.com/64/3419/3419833.png
 SecretLink||https://scrt.link||https://scrt.link/favicon-32x32.png
+<<
+
+>>Tools
+TransferKit (FileCoin) HTML||https://transferkit.io||https://cdn-icons-png.flaticon.com/64/4926/4926562.png
+Reverse Dictionary ES/EN||https://www.onelook.com/thesaurus||https://cdn-icons-png.flaticon.com/64/439/439842.png
+DropMeFiles (Share)||https://dropmefiles.com||https://dropmefiles.com/images/uploader/arrow.png
 <<
 
 >>Image Tools
