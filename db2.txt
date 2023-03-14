@@ -16,6 +16,8 @@ SecretLink||https://scrt.link||https://scrt.link/favicon-32x32.png
 
 >>Image Tools
 Extract Pics||https://extract.pics||https://extract.pics/img/apple-icon.png
+Reverse Image Search||https://www.reverseimagesearch.org/||https://www.reverseimagesearch.org/assets/images/finallogo.svg
+Reverse Image Checker||https://www.duplichecker.com/reverse-image-search.php||https://www.duplichecker.com/asets/img/dupli-checker.png
 Image OCR||https://www.imagetotext.info||https://www.imagetotext.info/web_assets/frontend/img/logo.svg
 Image OCR 2||https://brandfolder.com/workbench/extract-text-from-image||https://cdn.bfldr.com/I6FML9WY/at/puqsjh-ad7lbs-ei1hlp/brandfolder-icon-purple.svg
 Flaticon (Icons)||https://www.flaticon.com/||https://cdn-icons-png.flaticon.com/64/8133/8133830.png
