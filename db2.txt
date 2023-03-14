@@ -3,9 +3,9 @@ Emails||https://notepad.pw/markdown/hoN2JdB3W6sHeORyo9nu||https://savepostage.co
 <<
 
 >>Tools
-TransferKit (FileCoin||https://transferkit.io||a
-Reverse Dictionary ES/EN||https://www.onelook.com/thesaurus||b
-DropMeFiles (Share)||https://dropmefiles.com||c
+TransferKit (FileCoin||https://transferkit.io||https://cdn-icons-png.flaticon.com/64/4926/4926562.png
+Reverse Dictionary ES/EN||https://www.onelook.com/thesaurus||https://cdn-icons-png.flaticon.com/64/439/439842.png
+DropMeFiles (Share)||https://dropmefiles.com||https://dropmefiles.com/images/uploader/arrow.png
 <<
 
 >>Image Tools
@@ -15,7 +15,7 @@ Image OCR 2||https://brandfolder.com/workbench/extract-text-from-image||https://
 <<
 
 >>Pronunciation
-Link 1||https://forvo.com||a
+Link 1||https://forvo.com||https://cdn-icons-png.flaticon.com/64/10011/10011187.png
 Link 2||https://youglish.com||https://youglish.com/images/brandyg.png
 <<
 
