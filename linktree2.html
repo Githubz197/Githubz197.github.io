@@ -21,6 +21,7 @@
           <li class="list-group-item border-0 text-center p-4">
             <p>Hola 👋 soy <strong>Pychu</strong></p>
             <p class="mb-0">Me dicen the Best 👨‍💻 me gustan las chicas del mar 🌊⛵️ y el OF 🎨.</p>
+<b><div class="Weatherz"></div></b>
           </li>
         </ul>
       </div>
@@ -89,8 +90,6 @@
 
 <script>
 
-
-
 // Create a new XMLHttpRequest object
 var xhr = new XMLHttpRequest();
 // Set the URL of the text file to read
@@ -148,13 +147,33 @@ xhr.send();
 
 
 
+// Fetch the weather data from the URL
+fetch('https://forecast.weather.gov/MapClick.php?lat=37.34&lon=-121.89&FcstType=json')
+    // Once the data is received, parse it as JSON
+    .then(response => response.json())
+    .then(data => 
+    {
+        // Extract the temperature, weather, and hazard from the data.
+        let temp = data.currentobservation.Temp;
+        let weather = data.currentobservation.Weather;
+        let hazard = data.data.hazard;
 
+        // replace 'hazard' commas with dashes
+        hazard = hazard.join(',').replace(/,/g, ' - ');
+
+        //6 spaces
+        let spaces = Array(4).join('\xa0')
+
+        console.log(hazard);
+
+        // Display the weather information with temperature, weather, and hazard
+        document.getElementsByClassName("Weatherz")[0].textContent = `${temp}°F: ${weather}. ${spaces} ${hazard}`;
+
+    })
+    // If there is an error, log it to the console
+    .catch(err => console.error(err));
 
 </script>
 
-<div id="Multi_container"></div>
-
-
 </html>
-
 
