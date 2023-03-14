@@ -12,12 +12,12 @@ DropMeFiles (Share)||https://dropmefiles.com||https://dropmefiles.com/images/upl
 Extract Pics||https://extract.pics||https://extract.pics/img/apple-icon.png
 Image OCR||https://www.imagetotext.info||https://www.imagetotext.info/web_assets/frontend/img/logo.svg
 Image OCR 2||https://brandfolder.com/workbench/extract-text-from-image||https://cdn.bfldr.com/I6FML9WY/at/puqsjh-ad7lbs-ei1hlp/brandfolder-icon-purple.svg
-Flaticon (Icons)||https://www.flaticon.com/||https://media.flaticon.com/dist/min/img/logo/flaticon_negative.svg
+Flaticon (Icons)||https://www.flaticon.com/||https://cdn-icons-png.flaticon.com/64/8133/8133830.png
 <<
 
 >>Pronunciation
-Link 1||https://forvo.com||https://cdn-icons-png.flaticon.com/64/10011/10011187.png
-Link 2||https://youglish.com||https://youglish.com/images/brandyg.png
+Forvo (Audios)||https://forvo.com||https://cdn-icons-png.flaticon.com/64/10011/10011187.png
+Youglish (Youtube Videos)||https://youglish.com||https://youglish.com/images/brandyg.png
 <<
 
 >>Teens
