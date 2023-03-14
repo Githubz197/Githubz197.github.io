@@ -8,6 +8,12 @@ Reverse Dictionary ES/EN||https://www.onelook.com/thesaurus||https://cdn-icons-p
 DropMeFiles (Share)||https://dropmefiles.com||https://dropmefiles.com/images/uploader/arrow.png
 <<
 
+>>Misc
+StillTasty (Food)||https://www.stilltasty.com||https://cdn-icons-png.flaticon.com/64/1147/1147832.png
+Rome2Rio (Train)||https://www.rome2rio.com||https://cdn-icons-png.flaticon.com/64/3419/3419833.png
+SecretLink||https://scrt.link||https://scrt.link/favicon-32x32.png
+<<
+
 >>Image Tools
 Extract Pics||https://extract.pics||https://extract.pics/img/apple-icon.png
 Image OCR||https://www.imagetotext.info||https://www.imagetotext.info/web_assets/frontend/img/logo.svg
