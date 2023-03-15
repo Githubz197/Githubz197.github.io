@@ -168,7 +168,7 @@ fetch('https://forecast.weather.gov/MapClick.php?lat=37.34&lon=-121.89&FcstType=
         console.log(hazard);
 
         // Display the weather information with temperature, weather, and hazard
-        document.getElementsByClassName("Weatherz")[0].textContent = `${celsius}°C / ${temp}°F: ${weather}. ${spaces} ${hazard}`;
+        document.getElementsByClassName("Weatherz")[0].textContent = `${celsius}°C / ${temp}°F: ${weather} ${spaces} ${hazard}`;
 
     })
     // If there is an error, log it to the console
