@@ -28,7 +28,7 @@ Forvo (Audios)||https://forvo.com||https://cdn-icons-png.flaticon.com/64/10011/1
 Youglish (Youtube Videos)||https://youglish.com||https://youglish.com/images/brandyg.png
 <<
 
->>Teens
+>>Подростки (Podrostki)
 Anna Gloss||https://www.youtube.com/@annagloss8711/videos||https://styles.redditmedia.com/t5_6fkf4i/styles/communityIcon_irptymv5md0a1.png
 Mari Kruchkova||https://www.youtube.com/@MariKruchkova/videos||https://assets.puzzlefactory.pl/puzzle/436/946/original.webp
 Sarah Roy||https://www.youtube.com/@SarahRoy13/videos||Linktree2/SarahRoy.jpg
