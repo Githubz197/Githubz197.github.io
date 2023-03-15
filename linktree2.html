@@ -155,6 +155,7 @@ fetch('https://forecast.weather.gov/MapClick.php?lat=37.34&lon=-121.89&FcstType=
     {
         // Extract the temperature, weather, and hazard from the data.
         let temp = data.currentobservation.Temp;
+        let celsius = ((temp - 32) * 5 / 9).toFixed(1);
         let weather = data.currentobservation.Weather;
         let hazard = data.data.hazard;
 
@@ -167,7 +168,7 @@ fetch('https://forecast.weather.gov/MapClick.php?lat=37.34&lon=-121.89&FcstType=
         console.log(hazard);
 
         // Display the weather information with temperature, weather, and hazard
-        document.getElementsByClassName("Weatherz")[0].textContent = `${temp}°F: ${weather}. ${spaces} ${hazard}`;
+        document.getElementsByClassName("Weatherz")[0].textContent = `${celsius}°C / ${temp}°F: ${weather}. ${spaces} ${hazard}`;
 
     })
     // If there is an error, log it to the console
