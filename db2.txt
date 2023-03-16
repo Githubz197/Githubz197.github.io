@@ -24,6 +24,7 @@ Flaticon (Icons)||https://www.flaticon.com/||https://cdn-icons-png.flaticon.com/
 <<
 
 >>Pronunciation
+Русский (RusskiIE)||https://notepad.pw/markdown/xmAZEfQNBcKiKvpXc1ms||https://cdn-icons-png.flaticon.com/64/7533/7533602.png
 Forvo (Audios)||https://forvo.com||https://cdn-icons-png.flaticon.com/64/10011/10011187.png
 Youglish (Youtube Videos)||https://youglish.com||https://youglish.com/images/brandyg.png
 <<
