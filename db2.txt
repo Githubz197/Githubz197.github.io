@@ -2,6 +2,10 @@
 Emails||https://notepad.pw/markdown/hoN2JdB3W6sHeORyo9nu||https://savepostage.com/images/ql-icon.png
 <<
 
+>>Frank Suarez
+
+<<
+
 >>Tools
 TransferKit (FileCoin) HTML||https://transferkit.io||https://cdn-icons-png.flaticon.com/64/4926/4926562.png
 Reverse Dictionary ES/EN||https://www.onelook.com/thesaurus||https://cdn-icons-png.flaticon.com/64/439/439842.png
