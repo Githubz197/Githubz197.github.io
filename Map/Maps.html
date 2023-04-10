@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Church Locations</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+
+	<style>
+		#map{ height: 400px; }
+	</style>
+</head>
+<body>
+	<div id="map"></div>
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+<script>
+		var map = L.map('map').setView([37.284128, -121.902867], 10);
+
+		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+			id: 'examples.map-i875mjb7'
+		}).addTo(map);
+
+		var greenIcon = L.icon({
+			iconUrl: 'http://leafletjs.com/examples/custom-icons/leaf-green.png',
+			shadowUrl: 'http://leafletjs.com/examples/custom-icons/leaf-shadow.png',
+			iconSize: [38, 95], // size of the icon
+			shadowSize: [50, 64], // size of the shadow
+			iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+			shadowAnchor: [4, 62],  // the same for the shadow
+			popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+		});
+
+
+	L.marker([37.340699, -121.883031 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of La Vang}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.333945, -121.890757 ]).addTo(map)
+			.bindPopup("<b>{Cathedral Basilica of St. Joseph}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.335961, -121.877063 ]).addTo(map)
+			.bindPopup("<b>{San Jose State University Newman Center}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3524007, -121.8867665 ]).addTo(map)
+			.bindPopup("<b>{Holy Cross}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3185768, -121.885071 ]).addTo(map)
+			.bindPopup("<b>{Sacred Heart of Jesus}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.328922, -121.911361 ]).addTo(map)
+			.bindPopup("<b>{St. Leo the Great}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3281364, -121.849747 ]).addTo(map)
+			.bindPopup("<b>{Holy Korean Martyrs}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3139129969692, -121.905749152115 ]).addTo(map)
+			.bindPopup("<b>{St. Mary of the Assumption}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.35273, -121.8452 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Guadalupe}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3176, -121.84498 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Refuge}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.324005, -121.938471 ]).addTo(map)
+			.bindPopup("<b>{St. Martin of Tours}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3493452945769, -121.941450849768 ]).addTo(map)
+			.bindPopup("<b>{Mission Church at Santa Clara University}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3479340437613, -121.942945399749 ]).addTo(map)
+			.bindPopup("<b>{San Jose Chinese Catholic Mission}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3300247, -121.827148 ]).addTo(map)
+			.bindPopup("<b>{Most Holy Trinity}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3482189, -121.9429974 ]).addTo(map)
+			.bindPopup("<b>{St. Clare}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3468186798882, -121.953141231537 ]).addTo(map)
+			.bindPopup("<b>{Carmelite Monastery of San Francisco - Carmel of the Infant Jesus}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.284128, -121.902867 ]).addTo(map)
+			.bindPopup("<b>{Saint Christopher [Maronite]}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.284128, -121.902867 ]).addTo(map)
+			.bindPopup("<b>{Saint Christopher}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.371451, -121.825779 ]).addTo(map)
+			.bindPopup("<b>{St. John Vianney}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.2961184051984, -121.835651949738 ]).addTo(map)
+			.bindPopup("<b>{St. Maria Goretti}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3059256399104, -121.950661300919 ]).addTo(map)
+			.bindPopup("<b>{Immaculate Heart Of Mary Oratory}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.358261, -121.808808 ]).addTo(map)
+			.bindPopup("<b>{St. Albert Chmielowski}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3973347926079, -121.850680353165 ]).addTo(map)
+			.bindPopup("<b>{St. Victor}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.297016, -121.817413 ]).addTo(map)
+			.bindPopup("<b>{O'Connor Hospital &quot;inter-faith&quot; chapel}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.288693, -121.945417 ]).addTo(map)
+			.bindPopup("<b>{Saint Mary [Chaldean]}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.34034, -121.975248 ]).addTo(map)
+			.bindPopup("<b>{St. Justin}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.280245, -121.948749 ]).addTo(map)
+			.bindPopup("<b>{St. Lucy}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.2611847, -121.8915 ]).addTo(map)
+			.bindPopup("<b>{Church of the Transfiguration}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.2623825, -121.863449 ]).addTo(map)
+			.bindPopup("<b>{Holy Family}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.355083009188, -121.780170936584 ]).addTo(map)
+			.bindPopup("<b>{Mount St. Joseph Carmelite Monastery}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.262014, -121.9363815 ]).addTo(map)
+			.bindPopup("<b>{St. Frances Cabrini}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.4261738141, -121.871117579 ]).addTo(map)
+			.bindPopup("<b>{St. Elizabeth}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3150369, -121.991514 ]).addTo(map)
+			.bindPopup("<b>{Queen of Apostles}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.425892, -121.907779 ]).addTo(map)
+			.bindPopup("<b>{St. John the Baptist Catholic Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3893057987148, -121.977171169312 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Peace}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.357926, -121.994411 ]).addTo(map)
+			.bindPopup("<b>{St. Lawrence the Martyr}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.43173, -121.91417 ]).addTo(map)
+			.bindPopup("<b>{St. Thomas  Syro-Malabar Catholic Church of San Francisco}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.276, -121.979554 ]).addTo(map)
+			.bindPopup("<b>{St. Thomas of Canterbury}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.26028, -121.808063 ]).addTo(map)
+			.bindPopup("<b>{Christ the King}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.242604, -121.848114 ]).addTo(map)
+			.bindPopup("<b>{Santa Teresa}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.293328, -121.768214 ]).addTo(map)
+			.bindPopup("<b>{St. Francis of Assisi}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.261452, -121.975052 ]).addTo(map)
+			.bindPopup("<b>{Saint Basil the Great [Ruthenian]}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.261452, -121.975052 ]).addTo(map)
+			.bindPopup("<b>{Saint Elias [Melkite]}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.2288323647124, -121.874269439236 ]).addTo(map)
+			.bindPopup("<b>{Holy Spirit}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.4283123, -121.9699629 ]).addTo(map)
+			.bindPopup("<b>{Our Lady Star of the Sea}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.2926946055293, -122.01642940636 ]).addTo(map)
+			.bindPopup("<b>{Church of the Ascension}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.367778, -122.025955 ]).addTo(map)
+			.bindPopup("<b>{St. Martin}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.324236, -122.031627 ]).addTo(map)
+			.bindPopup("<b>{Saint Joseph of Cupertino Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.348633, -122.042141 ]).addTo(map)
+			.bindPopup("<b>{Resurrection}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.2688704, -122.0184154 ]).addTo(map)
+			.bindPopup("<b>{Sacred Heart}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.227085, -121.803139 ]).addTo(map)
+			.bindPopup("<b>{St. Julie Billiart}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3807869, -122.050308 ]).addTo(map)
+			.bindPopup("<b>{St. Cyprian }</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.224649, -121.98502 ]).addTo(map)
+			.bindPopup("<b>{Saint Mary of the Immaculate Conception}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.224649, -121.98502 ]).addTo(map)
+			.bindPopup("<b>{Saint Jude [Syro-Malankara]}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.19883, -121.823204 ]).addTo(map)
+			.bindPopup("<b>{Saint Anthony Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3473097061709, -122.078603009926 ]).addTo(map)
+			.bindPopup("<b>{St. Simon}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3881301542938, -122.08151840741 ]).addTo(map)
+			.bindPopup("<b>{St. Joseph}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.4053081, -122.0965093 ]).addTo(map)
+			.bindPopup("<b>{St. Athanasius}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3722925, -122.1092377 ]).addTo(map)
+			.bindPopup("<b>{St. Nicholas & St. William (at St. William site)}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.374318, -122.11647 ]).addTo(map)
+			.bindPopup("<b>{St. Nicholas and St. William Parish (at St. Nicholas site)}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.5209208500761, -121.961867357147 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Guadalupe Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.5346223479075, -121.920056581497 ]).addTo(map)
+			.bindPopup("<b>{St. Joseph Parish / Old Mission San Jose}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.4260561751, -122.1242778246 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of the Rosary}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3732266746488, -122.1528840065 ]).addTo(map)
+			.bindPopup("<b>{Immaculate Heart Monastery of the Poor Clares}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.1302647841165, -121.958323478699 ]).addTo(map)
+			.bindPopup("<b>{Christ Child}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.5395368901599, -122.027693925192 ]).addTo(map)
+			.bindPopup("<b>{St. Edward}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.4490746772818, -122.145179564933 ]).addTo(map)
+			.bindPopup("<b>{Saint Albert the Great}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.5571094060716, -122.003562053548 ]).addTo(map)
+			.bindPopup("<b>{Holy Spirit}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.44507, -122.156616 ]).addTo(map)
+			.bindPopup("<b>{St. Thomas Aquinas}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.4268843588491, -122.170455325409 ]).addTo(map)
+			.bindPopup("<b>{The Catholic Community at Stanford}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.4716271873268, -122.143993359912 ]).addTo(map)
+			.bindPopup("<b>{St. Francis of Assisi}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.5741549038869, -121.975815611115 ]).addTo(map)
+			.bindPopup("<b>{Corpus Christi }</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.5726149653134, -122.034944764557 ]).addTo(map)
+			.bindPopup("<b>{St. James the Apostle}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.4609493567983, -122.180324084656 ]).addTo(map)
+			.bindPopup("<b>{Church of the Nativity}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.4467928574752, -122.188916388886 ]).addTo(map)
+			.bindPopup("<b>{St. Raymond}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.4281151704743, -122.205683759108 ]).addTo(map)
+			.bindPopup("<b>{St. Denis Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.12467, -121.660629 ]).addTo(map)
+			.bindPopup("<b>{St. Catherine of Alexandria}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3841332287445, -122.233641551296 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of the Wayside}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.4697485865844, -122.200880354492 ]).addTo(map)
+			.bindPopup("<b>{St. Anthony}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6036754316696, -122.025374889373 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of the Rosary}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.1219755318532, -122.122271299362 ]).addTo(map)
+			.bindPopup("<b>{St. Michael}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.0669693203983, -122.00627009149 ]).addTo(map)
+			.bindPopup("<b>{San Agustin}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.5872720216661, -122.072565761902 ]).addTo(map)
+			.bindPopup("<b>{St. Anne}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.4614173681413, -122.2277572618 ]).addTo(map)
+			.bindPopup("<b>{St. Pius}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.48201, -122.22464 ]).addTo(map)
+			.bindPopup("<b>{St. Joseph the Worker/San Jose Obrero}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3218296158434, -122.276440915405 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Refuge Mission}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.4809859803667, -122.238060963712 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Mount Carmel}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6547666625948, -121.862244094132 ]).addTo(map)
+			.bindPopup("<b>{St. Augustine}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.047407163649, -122.073591107494 ]).addTo(map)
+			.bindPopup("<b>{St. John}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.47451, -122.260506 ]).addTo(map)
+			.bindPopup("<b>{St. Matthias}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6588206282699, -121.778063297272 ]).addTo(map)
+			.bindPopup("<b>{St. Charles Borromeo}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6423669730347, -122.059376087836 ]).addTo(map)
+			.bindPopup("<b>{St. Clement}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.638259919645, -122.078936269836 ]).addTo(map)
+			.bindPopup("<b>{St. Bede}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.4952925094705, -122.265922046168 ]).addTo(map)
+			.bindPopup("<b>{St. Charles}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6873908646605, -121.873719116184 ]).addTo(map)
+			.bindPopup("<b>{St. Elizabeth Seton}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6818864118777, -121.762927614369 ]).addTo(map)
+			.bindPopup("<b>{St. Michael Catholic Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.9800041732002, -121.909489074498 ]).addTo(map)
+			.bindPopup("<b>{Resurrection}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.5520499285312, -122.251675910787 ]).addTo(map)
+			.bindPopup("<b>{St. Luke}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.9788057320991, -121.948778958336 ]).addTo(map)
+			.bindPopup("<b>{St. Joseph's of Capitola}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.5170631, -122.284645 ]).addTo(map)
+			.bindPopup("<b>{Notre Dame de Namur University}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.529111645166, -122.277752528582 ]).addTo(map)
+			.bindPopup("<b>{St. Mark}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.67313, -122.076836 ]).addTo(map)
+			.bindPopup("<b>{All Saints}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.5107629472094, -122.294312523921 ]).addTo(map)
+			.bindPopup("<b>{Immaculate Heart of Mary}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.9746064395216, -121.806425531167 ]).addTo(map)
+			.bindPopup("<b>{Holy Eucharist}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6635760343636, -122.116300622969 ]).addTo(map)
+			.bindPopup("<b>{St. Joachim}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.9778294019459, -122.00417330657 ]).addTo(map)
+			.bindPopup("<b>{Our Lady Star of the Sea}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7128039497725, -121.941182272491 ]).addTo(map)
+			.bindPopup("<b>{St. Raymond}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.977961402017, -122.029343585205 ]).addTo(map)
+			.bindPopup("<b>{Holy Cross}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6973050485318, -122.051892130228 ]).addTo(map)
+			.bindPopup("<b>{Transfiguration}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.9608647565582, -121.98671768623 ]).addTo(map)
+			.bindPopup("<b>{Villa Maria Del Mar Chapel}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.5400757246527, -122.307767391205 ]).addTo(map)
+			.bindPopup("<b>{St. Gregory}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6868662647319, -122.117976846342 ]).addTo(map)
+			.bindPopup("<b>{St. John the Baptist}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7015356742358, -122.083094761902 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Grace}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.9552727, -122.025658 ]).addTo(map)
+			.bindPopup("<b>{Shrine of Saint Joseph- Guardian of the Redeemer, Santa Cruz, CA}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.2559630846515, -122.379225983047 ]).addTo(map)
+			.bindPopup("<b>{St. Anthony}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.014222, -121.5744755 ]).addTo(map)
+			.bindPopup("<b>{St. Mary Parish, Gilroy}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.0121522887586, -122.192575081924 ]).addTo(map)
+			.bindPopup("<b>{St. Vincent de Paul}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.55858302031, -122.322712288361 ]).addTo(map)
+			.bindPopup("<b>{St. Matthew}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.5745033678736, -122.310781486175 ]).addTo(map)
+			.bindPopup("<b>{St. Timothy Catholic Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.690815, -122.158691 ]).addTo(map)
+			.bindPopup("<b>{St. Felicitas Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.94014, -121.742592 ]).addTo(map)
+			.bindPopup("<b>{Our Lady Help of Christians}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.5548721462263, -122.336680172804 ]).addTo(map)
+			.bindPopup("<b>{St. Bartholomew}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.69429, -122.179771 ]).addTo(map)
+			.bindPopup("<b>{Evelyn Bonito}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7212558556857, -122.135927607284 ]).addTo(map)
+			.bindPopup("<b>{Church of the Assumption}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7683487544472, -121.972574763229 ]).addTo(map)
+			.bindPopup("<b>{St. Joan of Arc}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.9143905922744, -121.761368800026 ]).addTo(map)
+			.bindPopup("<b>{St. Patrick's Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.575577662732, -122.345156823121 ]).addTo(map)
+			.bindPopup("<b>{St. Catherine of Siena}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7235279070774, -122.159985448118 ]).addTo(map)
+			.bindPopup("<b>{St. Leander}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.4646330749685, -122.431466204403 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of the Pillar}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.58545, -122.373367 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Angels}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7425149324007, -122.168655395508 ]).addTo(map)
+			.bindPopup("<b>{St. Louis Bertrand}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7604829333318, -122.170002800138 ]).addTo(map)
+			.bindPopup("<b>{St. Benedict}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6040010921692, -122.393459222055 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Lebanon [Maronite]}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7341161678154, -122.236824504712 ]).addTo(map)
+			.bindPopup("<b>{St. Albert the Great}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6062486788863, -122.3988865556 ]).addTo(map)
+			.bindPopup("<b>{St. Dunstan}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7645150112418, -122.196078300476 ]).addTo(map)
+			.bindPopup("<b>{St. Bernard}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8273557792208, -122.003296322754 ]).addTo(map)
+			.bindPopup("<b>{St. Isidore}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7577716172753, -122.233417680198 ]).addTo(map)
+			.bindPopup("<b>{St. Philip Neri}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7089656938486, -121.454801559448 ]).addTo(map)
+			.bindPopup("<b>{St. Bernard - Holy Family Center}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.616466, -122.415632 ]).addTo(map)
+			.bindPopup("<b>{St. Robert}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7887949384256, -122.192771772468 ]).addTo(map)
+			.bindPopup("<b>{Divine Mercy Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6290357095461, -122.415179401776 ]).addTo(map)
+			.bindPopup("<b>{St. Bruno}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.778253701419, -122.222802898148 ]).addTo(map)
+			.bindPopup("<b>{St. Elizabeth}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7663077419543, -122.254722953373 ]).addTo(map)
+			.bindPopup("<b>{St. Joseph}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7776337, -122.235962 ]).addTo(map)
+			.bindPopup("<b>{Mary Help of Christians}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.827712832027, -122.130832393971 ]).addTo(map)
+			.bindPopup("<b>{St. Monica}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6569930967744, -122.414241542788 ]).addTo(map)
+			.bindPopup("<b>{All Souls parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.5802615744968, -122.47503641538 ]).addTo(map)
+			.bindPopup("<b>{St. Peter}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7973927106203, -122.216980097051 ]).addTo(map)
+			.bindPopup("<b>{St. Jarlath}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6469319580269, -122.430404899475 ]).addTo(map)
+			.bindPopup("<b>{St. Veronica}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7891539459652, -122.242775559425 ]).addTo(map)
+			.bindPopup("<b>{St. Anthony}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7724412266481, -122.279837100716 ]).addTo(map)
+			.bindPopup("<b>{St. Barnabas}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.803992, -122.231423 ]).addTo(map)
+			.bindPopup("<b>{St. Margaret Mary}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8130226135254, -122.214897155762 ]).addTo(map)
+			.bindPopup("<b>{Corpus Christi}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7434449902409, -121.428742837497 ]).addTo(map)
+			.bindPopup("<b>{St. Bernard}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6624517998613, -122.433877476196 ]).addTo(map)
+			.bindPopup("<b>{Mater Dolorosa}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8076055064903, -122.249250411987 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Lourdes}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6462244063128, -122.463021496227 ]).addTo(map)
+			.bindPopup("<b>{St. Augustine}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8743656221631, -122.07245430423 ]).addTo(map)
+			.bindPopup("<b>{St. Anne}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.719962260379, -122.395657755639 ]).addTo(map)
+			.bindPopup("<b>{St. Paul of the Shipwreck}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7096833111422, -122.408892992583 ]).addTo(map)
+			.bindPopup("<b>{Church of the Visitacion}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7097345368261, -122.408792220901 ]).addTo(map)
+			.bindPopup("<b>{Church of the Visitacion}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8108640282311, -122.263107 ]).addTo(map)
+			.bindPopup("<b>{Cathedral of Christ the Light}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8663221680002, -121.64600287368 ]).addTo(map)
+			.bindPopup("<b>{St. Anne}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7354389486242, -122.392901084656 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Lourdes}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.8452184445112, -121.536970846558 ]).addTo(map)
+			.bindPopup("<b>{Old Mission San Juan Bautista}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7255752920749, -122.40696511993 ]).addTo(map)
+			.bindPopup("<b>{St. Elizabeth}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6420672782326, -122.489446152998 ]).addTo(map)
+			.bindPopup("<b>{Church of the Good Shepherd}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8280958359993, -122.250904582604 ]).addTo(map)
+			.bindPopup("<b>{St. Leo the Great}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.838077, -122.231454 ]).addTo(map)
+			.bindPopup("<b>{St. Theresa of the Infant Jesus}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7307247449, -122.4072377124 ]).addTo(map)
+			.bindPopup("<b>{Immaculate Conception [Ukrainian]}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8813267128398, -122.113398087311 ]).addTo(map)
+			.bindPopup("<b>{St. Perpetua}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8088716673, -122.2964396881 ]).addTo(map)
+			.bindPopup("<b>{St. Patrick}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8965590847483, -122.068089599621 ]).addTo(map)
+			.bindPopup("<b>{St. Mary}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7153686998346, -122.434595746614 ]).addTo(map)
+			.bindPopup("<b>{Church of the Epiphany}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6762921582921, -122.473744392395 ]).addTo(map)
+			.bindPopup("<b>{St. Andrew}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8301876454, -122.2689385435 ]).addTo(map)
+			.bindPopup("<b>{Sacred Heart}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6883407101222, -122.467611136246 ]).addTo(map)
+			.bindPopup("<b>{Holy Angels}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7387824665683, -122.414775423714 ]).addTo(map)
+			.bindPopup("<b>{St. Kevin}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.7665951082417, -121.756930063264 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Refuge}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7268688350779, -122.435141711639 ]).addTo(map)
+			.bindPopup("<b>{Corpus Christi}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8474347468384, -122.249093873541 ]).addTo(map)
+			.bindPopup("<b>{St. Albert the Great Priory Chapel}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.734291213999, -122.4271152565 ]).addTo(map)
+			.bindPopup("<b>{St. John the Evangelist}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7051309903606, -122.460495668279 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Perpetual Help}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7614485012915, -122.397114738623 ]).addTo(map)
+			.bindPopup("<b>{St. Teresa of Avila}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7480392330861, -122.414264907635 ]).addTo(map)
+			.bindPopup("<b>{St. Anthony of Padua}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7135001158506, -122.454227438151 ]).addTo(map)
+			.bindPopup("<b>{Saint Michael}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7525317052382, -122.410891044197 ]).addTo(map)
+			.bindPopup("<b>{St. Peter}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9145350584911, -122.042583668918 ]).addTo(map)
+			.bindPopup("<b>{St. John Vianney}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8507864084, -122.2575957441 ]).addTo(map)
+			.bindPopup("<b>{St. Augustine}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.744242334345, -122.426945893 ]).addTo(map)
+			.bindPopup("<b>{St. Paul}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7305290301095, -122.446757883113 ]).addTo(map)
+			.bindPopup("<b>{St. Finn Barr}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8835764467752, -122.185887560852 ]).addTo(map)
+			.bindPopup("<b>{Santa Maria}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7537860651, -122.4230689653 ]).addTo(map)
+			.bindPopup("<b>{St. James Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7618116935059, -122.416865325654 ]).addTo(map)
+			.bindPopup("<b>{St. Charles Borromeo}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7118856430129, -122.47282120636 ]).addTo(map)
+			.bindPopup("<b>{St. Thomas More}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9170876254066, -122.081769336013 ]).addTo(map)
+			.bindPopup("<b>{St. Stephen}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8466001438824, -122.285302665565 ]).addTo(map)
+			.bindPopup("<b>{St. Columba Catholic Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.723492854208, -122.462003231049 ]).addTo(map)
+			.bindPopup("<b>{St. Emydius}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.698766681779, -122.488232690738 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Mercy}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8654190229431, -122.253302185181 ]).addTo(map)
+			.bindPopup("<b>{Newman Hall / Holy Spirit Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7518038273722, -122.436169967315 ]).addTo(map)
+			.bindPopup("<b>{St. Philip the Apostle}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7643746497186, -122.426861446138 ]).addTo(map)
+			.bindPopup("<b>{Mission Dolores }</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7856108229352, -122.403550857811 ]).addTo(map)
+			.bindPopup("<b>{St. Patrick}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9335191783082, -121.722181797027 ]).addTo(map)
+			.bindPopup("<b>{Immaculate Heart of Mary}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7606472786455, -122.437319728836 ]).addTo(map)
+			.bindPopup("<b>{Most Holy Redeemer}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7433740749, -122.4567881415 ]).addTo(map)
+			.bindPopup("<b>{St. Brendan}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7818298376742, -122.413125588955 ]).addTo(map)
+			.bindPopup("<b>{St. Boniface }</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9477346420334, -121.951807975769 ]).addTo(map)
+			.bindPopup("<b>{St. Bonaventure}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7763062, -122.421913 ]).addTo(map)
+			.bindPopup("<b>{Nativity of Our Lord}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.472392493825, -121.134928219574 ]).addTo(map)
+			.bindPopup("<b>{Sacred Heart}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9415774660419, -122.026989134918 ]).addTo(map)
+			.bindPopup("<b>{St. Francis of Assisi}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7906220859287, -122.406447516533 ]).addTo(map)
+			.bindPopup("<b>{Notre Dame des Victoires}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7309074052503, -122.478914059458 ]).addTo(map)
+			.bindPopup("<b>{St. Stephen Catholic Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7927703857422, -122.405685424805 ]).addTo(map)
+			.bindPopup("<b>{Old St. Mary's Cathedral & Chinese Mission}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8776298689126, -122.258508622721 ]).addTo(map)
+			.bindPopup("<b>{Gesù Chapel, Jesuit School of Theology}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8695564, -122.278221 ]).addTo(map)
+			.bindPopup("<b>{St. Joseph the Worker}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7396729781241, -122.473663050301 ]).addTo(map)
+			.bindPopup("<b>{St. Cecilia}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.8513251490232, -121.409595736694 ]).addTo(map)
+			.bindPopup("<b>{Sacred Heart Catholic Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7842657415038, -122.425200390213 ]).addTo(map)
+			.bindPopup("<b>{Cathedral of St. Mary of the Assumption}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7990247016492, -122.407705091583 ]).addTo(map)
+			.bindPopup("<b>{National Shrine of St. Francis of Assisi}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7715175848485, -122.445841460005 ]).addTo(map)
+			.bindPopup("<b>{St. Agnes Catholic Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8015937805176, -122.410224914551 ]).addTo(map)
+			.bindPopup("<b>{Saints Peter and Paul Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7889895017684, -122.42722345646 ]).addTo(map)
+			.bindPopup("<b>{St. Benedict Parish for the Deaf}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8837674965425, -122.271759034393 ]).addTo(map)
+			.bindPopup("<b>{St. Mary Magdalen Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7644213461444, -122.461905240405 ]).addTo(map)
+			.bindPopup("<b>{St. John of God}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7871653374622, -122.435417576721 ]).addTo(map)
+			.bindPopup("<b>{St. Dominic's Catholic Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9469847129403, -122.078323611115 ]).addTo(map)
+			.bindPopup("<b>{Christ the King}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7871738163781, -122.435935243061 ]).addTo(map)
+			.bindPopup("<b>{Shrine of Saint Jude Thaddeus}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7755165, -122.452477 ]).addTo(map)
+			.bindPopup("<b>{St. Ignatius}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7622299572297, -122.470816715307 ]).addTo(map)
+			.bindPopup("<b>{St. Anne of the Sunset}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7395720032697, -122.498192093605 ]).addTo(map)
+			.bindPopup("<b>{St. Gabriel}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8811920398413, -122.293715281561 ]).addTo(map)
+			.bindPopup("<b>{St. Ambrose Catholic Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7961974721828, -122.437221403984 ]).addTo(map)
+			.bindPopup("<b>{St. Vincent de Paul}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9716459207, -122.0017717345 ]).addTo(map)
+			.bindPopup("<b>{St. Agnes}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7811915561745, -122.466687070587 ]).addTo(map)
+			.bindPopup("<b>{Star of the Sea}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7575080901906, -122.498329433696 ]).addTo(map)
+			.bindPopup("<b>{Holy Name of Jesus}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7804041356902, -122.482851656343 ]).addTo(map)
+			.bindPopup("<b>{St. Monica}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9030046274016, -122.290403525386 ]).addTo(map)
+			.bindPopup("<b>{St. Jerome Catholic Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.78086, -122.482907 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Fatima [Russian]}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9871792278203, -121.823294114402 ]).addTo(map)
+			.bindPopup("<b>{St. Ignatius of Antioch Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.980926350717, -122.035497121064 ]).addTo(map)
+			.bindPopup("<b>{Queen of All Saints}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.8335791225098, -121.366750979972 ]).addTo(map)
+			.bindPopup("<b>{St. Benedict Catholic Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7753765350544, -122.499971729225 ]).addTo(map)
+			.bindPopup("<b>{St. Thomas the Apostle}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.6792268864157, -121.796866874632 ]).addTo(map)
+			.bindPopup("<b>{St Jude Catholic Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9912853169936, -121.714520070716 ]).addTo(map)
+			.bindPopup("<b>{St. Anthony}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.006103479022, -121.886261 ]).addTo(map)
+			.bindPopup("<b>{Good Shepherd Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.6973917439374, -121.64576778682 ]).addTo(map)
+			.bindPopup("<b>{Madonna del Sasso}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.0083521662089, -121.805708217141 ]).addTo(map)
+			.bindPopup("<b>{Most Holy Rosary}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9190368986598, -122.313671949738 ]).addTo(map)
+			.bindPopup("<b>{St. John the Baptist}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8141360410796, -121.282748579979 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Guadalupe}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.0214161921333, -121.949872492065 ]).addTo(map)
+			.bindPopup("<b>{Our Lady, Queen of the World}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.678154, -121.658840626984 ]).addTo(map)
+			.bindPopup("<b>{Sacred Heart}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.6799431, -121.649612 ]).addTo(map)
+			.bindPopup("<b>{Christ the King [Spanish]}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3175849949026, -121.023778134918 ]).addTo(map)
+			.bindPopup("<b>{St. Joachim}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.0303366386392, -121.885871901141 ]).addTo(map)
+			.bindPopup("<b>{St. Peter Martyr of Verona}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.6808746641974, -121.613175288361 ]).addTo(map)
+			.bindPopup("<b>{St. Mary of the Nativity}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9345273428, -122.3421924265 ]).addTo(map)
+			.bindPopup("<b>{St. Cornelius}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9477240143616, -122.322042335141 ]).addTo(map)
+			.bindPopup("<b>{St. David of Wales}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8565634638253, -122.483242903028 ]).addTo(map)
+			.bindPopup("<b>{St. Mary Star of the Sea}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.0148440855283, -122.134701668648 ]).addTo(map)
+			.bindPopup("<b>{St. Catherine of Siena}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9338657899096, -122.360258813492 ]).addTo(map)
+			.bindPopup("<b>{St. Mark Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.2540352408578, -121.007507322754 ]).addTo(map)
+			.bindPopup("<b>{Shrine of Our Lady of Miracles}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8012230429063, -121.210429695304 ]).addTo(map)
+			.bindPopup("<b>{St. Anthony of Padua}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9269332788605, -122.387083764388 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Mercy}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9632835388184, -122.318862915039 ]).addTo(map)
+			.bindPopup("<b>{St. Callistus}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.7863627806496, -121.316352844239 ]).addTo(map)
+			.bindPopup("<b>{Immaculate Conception}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.957242831611, -122.342070750241 ]).addTo(map)
+			.bindPopup("<b>{St. Paul}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.6195532223063, -121.912152 ]).addTo(map)
+			.bindPopup("<b>{St. Angela Merici}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8881546732101, -122.47429825264 ]).addTo(map)
+			.bindPopup("<b>{St. Hilary Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.6169434, -121.833107 ]).addTo(map)
+			.bindPopup("<b>{St. Francis Xavier Catholic Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.8835869714226, -121.269405787697 ]).addTo(map)
+			.bindPopup("<b>{Good Shepherd}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.0045509338379, -122.289764404297 ]).addTo(map)
+			.bindPopup("<b>{St. Joseph}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.0482605096957, -122.150244742928 ]).addTo(map)
+			.bindPopup("<b>{St. Dominic}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.6220805427649, -121.645652034393 ]).addTo(map)
+			.bindPopup("<b>{St. Joseph}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.5954246554774, -121.890454292297 ]).addTo(map)
+			.bindPopup("<b>{San Carlos Borromeo Cathedral}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.0450012030173, -122.185965746033 ]).addTo(map)
+			.bindPopup("<b>{St. Patrick's Mission}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6373988839893, -121.025485639148 ]).addTo(map)
+			.bindPopup("<b>{St. Stanislaus Church (Maze Campus)}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.0286780367478, -122.263058559942 ]).addTo(map)
+			.bindPopup("<b>{St. Patrick}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7007646650377, -121.048106724854 ]).addTo(map)
+			.bindPopup("<b>{Holy Family}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9320205121988, -121.286821526984 ]).addTo(map)
+			.bindPopup("<b>{St. George}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9649466710385, -121.334018057904 ]).addTo(map)
+			.bindPopup("<b>{St. Bernadette}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6387256920701, -121.003251425246 ]).addTo(map)
+			.bindPopup("<b>{Old St. Stanislaus Church (Downtown Campus)}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.0542970636904, -122.222654325131 ]).addTo(map)
+			.bindPopup("<b>{St. Rose of Lima}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9076449297397, -122.546301012917 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Mount Carmel}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9291328810921, -121.25296156218 ]).addTo(map)
+			.bindPopup("<b>{St. Linus}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9512166198271, -121.28693625264 ]).addTo(map)
+			.bindPopup("<b>{St. Mary of the Assumption}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9630092478122, -121.299663542328 ]).addTo(map)
+			.bindPopup("<b>{Cathedral of the Annunciation}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6677499857853, -120.998977872214 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Fatima}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.589976, -120.951284 ]).addTo(map)
+			.bindPopup("<b>{Saint Matthew [Chaldean]}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9559582737517, -121.268630157672 ]).addTo(map)
+			.bindPopup("<b>{Saint Gertrude’s Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9343939797003, -122.535880012833 ]).addTo(map)
+			.bindPopup("<b>{St. Patrick}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.5830154, -120.937477 ]).addTo(map)
+			.bindPopup("<b>{St. Jude}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7991371154785, -121.07105255127 ]).addTo(map)
+			.bindPopup("<b>{St. Patrick}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9872907691337, -122.465335873772 ]).addTo(map)
+			.bindPopup("<b>{St. Sylvester Chapel}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.5431289672852, -121.919479370117 ]).addTo(map)
+			.bindPopup("<b>{San Carlos Borromeo de Carmelo Mission}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.985524606152, -121.298524875008 ]).addTo(map)
+			.bindPopup("<b>{Saint Luke}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.5425493241985, -121.919821746033 ]).addTo(map)
+			.bindPopup("<b>{Saint Angela  Merici, Pacific Grove, CA}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.950388247741, -122.534253558197 ]).addTo(map)
+			.bindPopup("<b>{St. Sebastian}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.0873558070076, -122.243397962952 ]).addTo(map)
+			.bindPopup("<b>{St. Louis Bertrand Chapel}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.0085028913846, -121.331216438762 ]).addTo(map)
+			.bindPopup("<b>{Church of the Presentation}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6701906460972, -120.958323066132 ]).addTo(map)
+			.bindPopup("<b>{St. Joseph Church, a Stewardship Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.11004, -122.204979 ]).addTo(map)
+			.bindPopup("<b>{St. Catherine of Siena}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9797870214, -122.5139714562 ]).addTo(map)
+			.bindPopup("<b>{Dominican University of California}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9748947518783, -122.527979727258 ]).addTo(map)
+			.bindPopup("<b>{St. Raphael}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9613064264197, -121.221085118524 ]).addTo(map)
+			.bindPopup("<b>{St. Edward}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.57160470786, -121.519404319954 ]).addTo(map)
+			.bindPopup("<b>{Mission of Our Lady of Guadalupe}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.1053612583, -122.258599788082 ]).addTo(map)
+			.bindPopup("<b>{St. Vincent Ferrer}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.468247, -120.866076 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of the Assumption}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3285574731001, -120.853562951088 ]).addTo(map)
+			.bindPopup("<b>{St. Mary}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.4110026612681, -120.855924392365 ]).addTo(map)
+			.bindPopup("<b>{Holy Rosary}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.1141571144268, -122.237910370423 ]).addTo(map)
+			.bindPopup("<b>{St. Basil the Great}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9688301086426, -122.562103271484 ]).addTo(map)
+			.bindPopup("<b>{St. Anselm}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.15708, -121.694519 ]).addTo(map)
+			.bindPopup("<b>{St. Joseph}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.529816683101, -120.856834 ]).addTo(map)
+			.bindPopup("<b>{All Saints University Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7370849530001, -120.944564322754 ]).addTo(map)
+			.bindPopup("<b>{St. Frances of Rome}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.1599614371416, -121.612522338623 ]).addTo(map)
+			.bindPopup("<b>{St. Therese's Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.4987621947537, -120.838048984131 ]).addTo(map)
+			.bindPopup("<b>{Sacred Heart}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.0097429338979, -122.554739880951 ]).addTo(map)
+			.bindPopup("<b>{St. Isabella}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.519402, -120.831618 ]).addTo(map)
+			.bindPopup("<b>{Saint Thomas Assyrian-Chaldean Catholic Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9905833997205, -122.59127275712 ]).addTo(map)
+			.bindPopup("<b>{St. Rita}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.034523, -122.5266 ]).addTo(map)
+			.bindPopup("<b>{Most Holy Rosary Chapel}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.6014446258397, -120.851551546252 ]).addTo(map)
+			.bindPopup("<b>{St. Anthony}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.0245361498013, -121.222607075253 ]).addTo(map)
+			.bindPopup("<b>{St. Michael}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.4800839717875, -121.730154830151 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Mt. Carmel}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.0543218141666, -120.854837539673 ]).addTo(map)
+			.bindPopup("<b>{St. Joseph}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.05812, -121.254164 ]).addTo(map)
+			.bindPopup("<b>{Saint Sharbel hermitage [Maronite]}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.1748851335373, -122.252730684456 ]).addTo(map)
+			.bindPopup("<b>{Holy Family}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.5052274778634, -121.440628773379 ]).addTo(map)
+			.bindPopup("<b>{St. Theodore}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.0769237528675, -122.55709263209 ]).addTo(map)
+			.bindPopup("<b>{St. Anthony of Padua}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.7633575613285, -120.861997011115 ]).addTo(map)
+			.bindPopup("<b>{St. Mary of the Annunciation}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.2537657458438, -122.033914716086 ]).addTo(map)
+			.bindPopup("<b>{Holy Spirit}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.1321556445995, -121.276000178574 ]).addTo(map)
+			.bindPopup("<b>{St. Anne's Catholic Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.0216187306017, -121.087384 ]).addTo(map)
+			.bindPopup("<b>{Holy Cross}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3890921550512, -120.718729108429 ]).addTo(map)
+			.bindPopup("<b>{St. Jude Thaddeus}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.0122352619735, -122.702307650757 ]).addTo(map)
+			.bindPopup("<b>{St. Cecilia}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.2800679479076, -121.951987415314 ]).addTo(map)
+			.bindPopup("<b>{St. Michael}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.2791732905535, -122.024010352648 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Mount Carmel}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.1090645569732, -122.583970355403 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Loretto}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.2472656610727, -121.515919422913 ]).addTo(map)
+			.bindPopup("<b>{St. Anthony}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.2461836104247, -122.273657101852 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Grapes Chapel; Meritage Resort}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.2277321964962, -121.423316512299 ]).addTo(map)
+			.bindPopup("<b>{Mater Ecclesiae}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.1496658, -121.152512 ]).addTo(map)
+			.bindPopup("<b>{St. Joachim}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.2890081602803, -122.305994526459 ]).addTo(map)
+			.bindPopup("<b>{St. Thomas Aquinas}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.0446091805825, -122.79082069577 ]).addTo(map)
+			.bindPopup("<b>{Sacred Heart}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.3458481, -121.953705 ]).addTo(map)
+			.bindPopup("<b>{St. Joseph}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.4283978180806, -121.328311923119 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Solitude}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3562341594565, -120.614198534059 ]).addTo(map)
+			.bindPopup("<b>{Saint Anthony}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.3027089669989, -122.286965576721 ]).addTo(map)
+			.bindPopup("<b>{St. John the Baptist}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.4249, -121.3276 ]).addTo(map)
+			.bindPopup("<b>{Nuestra Senora de la Soledad  }</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.2444619118894, -121.29801765148 ]).addTo(map)
+			.bindPopup("<b>{St. Christopher}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.3652256487104, -121.99918564337 ]).addTo(map)
+			.bindPopup("<b>{St. Mary}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.3288706761694, -122.312061846558 ]).addTo(map)
+			.bindPopup("<b>{St. Apollinaris}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.2926131866408, -122.463716186508 ]).addTo(map)
+			.bindPopup("<b>{St. Francis Solano}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.983737695391, -120.625786124992 ]).addTo(map)
+			.bindPopup("<b>{Sacred Heart}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.2325146156831, -122.642918601189 ]).addTo(map)
+			.bindPopup("<b>{St. Vincent de Paul}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.2607484493959, -121.793007738495 ]).addTo(map)
+			.bindPopup("<b>{St. Francis of the Redwoods}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.2570255916068, -122.620970119049 ]).addTo(map)
+			.bindPopup("<b>{St. James Catholic Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.3194392655003, -122.503964178543 ]).addTo(map)
+			.bindPopup("<b>{Hanna Center}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.3232334892413, -122.495838711639 ]).addTo(map)
+			.bindPopup("<b>{St. Leo the Great}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.445259491287, -121.82086946261 ]).addTo(map)
+			.bindPopup("<b>{St. Peter}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.2973694928084, -120.487153291703 ]).addTo(map)
+			.bindPopup("<b>{Sacred Heart}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.3926186327611, -122.363150261871 ]).addTo(map)
+			.bindPopup("<b>{St. Michael's Chapel}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.39565, -122.355848 ]).addTo(map)
+			.bindPopup("<b>{St. Joan of Arc}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3056614158268, -120.480569578171 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Mercy}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.4111680682437, -121.425936492065 ]).addTo(map)
+			.bindPopup("<b>{Good Shepherd Catholic Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.3956090654905, -121.370886242853 ]).addTo(map)
+			.bindPopup("<b>{Saint Joseph}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.3327942, -120.4635 ]).addTo(map)
+			.bindPopup("<b>{St. Patrick's Church }</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.3167905277836, -121.240910628049 ]).addTo(map)
+			.bindPopup("<b>{Holy Trinity}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.4603898054637, -121.505546786133 ]).addTo(map)
+			.bindPopup("<b>{St. Joseph}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.4261133, -122.4153004 ]).addTo(map)
+			.bindPopup("<b>{Carmelite House of Prayer}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.335585, -122.673439 ]).addTo(map)
+			.bindPopup("<b>{Newman Center Sonoma State University}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.9690495720436, -120.627284920654 ]).addTo(map)
+			.bindPopup("<b>{St. Ignatius Mission Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.4769443274935, -121.48140079835 ]).addTo(map)
+			.bindPopup("<b>{St. Anne}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.5209747097193, -121.980641450479 ]).addTo(map)
+			.bindPopup("<b>{St. Anthony}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.4414963213243, -121.336605187836 ]).addTo(map)
+			.bindPopup("<b>{St. Maria Goretti}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.3273757490701, -122.711926346588 ]).addTo(map)
+			.bindPopup("<b>{St. Joseph}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.498863, -121.536257 ]).addTo(map)
+			.bindPopup("<b>{St. Anthony}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.4549065, -122.424187 ]).addTo(map)
+			.bindPopup("<b>{Holy Family}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.4832838444, -121.4443783239 ]).addTo(map)
+			.bindPopup("<b>{St. Charles Borromeo}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.3651607442834, -122.68623089682 ]).addTo(map)
+			.bindPopup("<b>{St. Elizabeth Ann Seton}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.5473746356, -121.7445860662 ]).addTo(map)
+			.bindPopup("<b>{University of CA Newman Community}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.4965553, -121.421013 ]).addTo(map)
+			.bindPopup("<b>{Saint Andrew [Ukrainian]}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.2447402726714, -122.905169624329 ]).addTo(map)
+			.bindPopup("<b>{Assumption of Mary}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.4966555506214, -121.40526010741 ]).addTo(map)
+			.bindPopup("<b>{Vietnamese Martyrs}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.554971, -121.748937 ]).addTo(map)
+			.bindPopup("<b>{St. James}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.494582984469, -121.379513068527 ]).addTo(map)
+			.bindPopup("<b>{St. Paul}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.5181609872405, -121.469374228397 ]).addTo(map)
+			.bindPopup("<b>{St. Rose}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.5288074474, -121.487221386922 ]).addTo(map)
+			.bindPopup("<b>{St. Robert}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.519270904485, -121.432449160713 ]).addTo(map)
+			.bindPopup("<b>{Infant Jesus [Syro-Malabar]}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.5262451171875, -121.455833435059 ]).addTo(map)
+			.bindPopup("<b>{St. Stephen the First Martyr}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.4401659141863, -122.607246321426 ]).addTo(map)
+			.bindPopup("<b>{Star of the Valley}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.8582231391337, -120.454280716705 ]).addTo(map)
+			.bindPopup("<b>{St. Joseph}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.5500536874131, -121.498540433504 ]).addTo(map)
+			.bindPopup("<b>{Holy Spirit}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.2956601690714, -120.319142100525 ]).addTo(map)
+			.bindPopup("<b>{Sacred Heart}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.5399610792826, -121.441453797623 ]).addTo(map)
+			.bindPopup("<b>{St. Peter & All Hallows Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.5031627801632, -122.470524119049 ]).addTo(map)
+			.bindPopup("<b>{St. Helena Catholic Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.539803, -121.428344 ]).addTo(map)
+			.bindPopup("<b>{Saint Philip the Apostle [Ruthenian]}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.5548148297611, -121.47097610318 ]).addTo(map)
+			.bindPopup("<b>{Immaculate Conception Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.3496525812167, -120.932690629578 ]).addTo(map)
+			.bindPopup("<b>{Sacred Heart of Jesus}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.5702701886, -121.5021039452 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Guadalupe}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.575617011176, -121.525595041949 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Grace}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.5698214625904, -121.494778156281 ]).addTo(map)
+			.bindPopup("<b>{St. Elizabeth}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.559795617007, -121.434463050785 ]).addTo(map)
+			.bindPopup("<b>{St. Mary}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.2170220267461, -121.129368233224 ]).addTo(map)
+			.bindPopup("<b>{Saint John the Baptist Catholic Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.5694629263053, -121.45491689881 ]).addTo(map)
+			.bindPopup("<b>{Sacred Heart of Jesus}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.5737661708824, -121.472453892531 ]).addTo(map)
+			.bindPopup("<b>{St. Francis of Assisi Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.4470760328357, -122.687801215 ]).addTo(map)
+			.bindPopup("<b>{St. Eugene's Cathedral}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.4660174162732, -122.646056780426 ]).addTo(map)
+			.bindPopup("<b>{Holy Spirit Catholic Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.5790716664933, -121.492364232502 ]).addTo(map)
+			.bindPopup("<b>{Cathedral of the Blessed Sacrament}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.5466996098154, -121.351891291079 ]).addTo(map)
+			.bindPopup("<b>{Saint Jeong-Hae Elizabeth}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.5665692339764, -121.429676055908 ]).addTo(map)
+			.bindPopup("<b>{Newman Catholic Center Sacramento}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.1937642666271, -120.681652319049 ]).addTo(map)
+			.bindPopup("<b>{St. Andrew}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.59491, -121.5341 ]).addTo(map)
+			.bindPopup("<b>{Holy Cross}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.4431968853867, -122.718926266846 ]).addTo(map)
+			.bindPopup("<b>{St. Rose }</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.4342908121895, -122.743096126459 ]).addTo(map)
+			.bindPopup("<b>{Resurrection}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.0750468820341, -120.544738761902 ]).addTo(map)
+			.bindPopup("<b>{St. Patrick}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.569515723215, -121.343489351349 ]).addTo(map)
+			.bindPopup("<b>{Saint George [Melkite]}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.4906395955473, -121.106051941523 ]).addTo(map)
+			.bindPopup("<b>{St. Vincent de Paul}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.4048115910963, -122.839290746033 ]).addTo(map)
+			.bindPopup("<b>{St. Sebastian}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.228138, -120.250191 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Lourdes Mission}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.6084400550026, -121.457273077309 ]).addTo(map)
+			.bindPopup("<b>{St. Joseph}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.5961718578944, -121.389091457672 ]).addTo(map)
+			.bindPopup("<b>{St. Ignatius}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.1207761019606, -120.258493695343 ]).addTo(map)
+			.bindPopup("<b>{St. Columba Church/St. George Mission}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.346140224077, -122.972294168787 ]).addTo(map)
+			.bindPopup("<b>{St. Teresa of Avila}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.6103003931625, -121.410412737544 ]).addTo(map)
+			.bindPopup("<b>{St. Philomene Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.6032944, -121.347038 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of the Assumption}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.7555164470752, -120.384845297287 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Guadalupe }</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.02621, -121.536224 ]).addTo(map)
+			.bindPopup("<b>{New Camaldoli Hermitage}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.6785157, -121.7732971 ]).addTo(map)
+			.bindPopup("<b>{Holy Rosary}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.3008068195432, -120.704084466406 ]).addTo(map)
+			.bindPopup("<b>{St. Thomas Aquinas}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.3723499022643, -120.801443812164 ]).addTo(map)
+			.bindPopup("<b>{St. Katharine Drexel}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.372397712512, -120.801404714584 ]).addTo(map)
+			.bindPopup("<b>{St. Katharine Drexel}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.6026583197874, -121.300349588797 ]).addTo(map)
+			.bindPopup("<b>{St. John Vianney}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.6215596832383, -121.368705768185 ]).addTo(map)
+			.bindPopup("<b>{Presentation of the Blessed Virgin Mary}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.640870841734, -121.420598860681 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Lourdes}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.5777778111173, -122.576869568123 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Perpetual Help Catholic Church}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.984738575146, -120.384972892031 ]).addTo(map)
+			.bindPopup("<b>{St. Patrick's Parish}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.624777, -121.328849 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of the Rosary [Maronite]}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.40765, -122.947716 ]).addTo(map)
+			.bindPopup("<b>{Saint Charles}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.6953359159874, -122.031599682617 ]).addTo(map)
+			.bindPopup("<b>{St. Martin}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.4086071027024, -122.948029637731 ]).addTo(map)
+			.bindPopup("<b>{St. Philip the Apostle}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.6711046543423, -121.511896058228 ]).addTo(map)
+			.bindPopup("<b>{Divine Mercy}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.6430281589055, -121.330525957425 ]).addTo(map)
+			.bindPopup("<b>{St. John the Evangelist}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.1398354277266, -120.466319373016 ]).addTo(map)
+			.bindPopup("<b>{St. Patrick}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([37.826361, -120.255045 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Mount Carmel}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.1284903951718, -121.020946439209 ]).addTo(map)
+			.bindPopup("<b>{San Lucas}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.6523620716161, -121.274574932541 ]).addTo(map)
+			.bindPopup("<b>{St. Mel}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.5438357274836, -122.799828510818 ]).addTo(map)
+			.bindPopup("<b>{Our Lady of Guadalupe}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.6893523706548, -121.362930157094 ]).addTo(map)
+			.bindPopup("<b>{St. Lawrence the Martyr}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.682373, -121.307205 ]).addTo(map)
+			.bindPopup("<b>{Holy Wisdom [Ukrainian]}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([36.0138305107078, -121.249215429687 ]).addTo(map)
+			.bindPopup("<b>{San Antonio de Padua}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.6908, -121.26885 ]).addTo(map)
+			.bindPopup("<b>{Holy Wisdom [Ukrainian]}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.6792654473811, -121.217483586627 ]).addTo(map)
+			.bindPopup("<b>{Divine Savior}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.4727043, -123.0163528 ]).addTo(map)
+			.bindPopup("<b>{St. Catherine of Siena}</b><br>First St.<br>San Jose, CA 95122");
+	L.marker([38.7023679786599, -121.275066952917 ]).addTo(map)
+			.bindPopup("<b>{Holy Family}</b><br>First St.<br>San Jose, CA 95122");
+
+
+
+
+	</script>
+</body>
+</html>
+
