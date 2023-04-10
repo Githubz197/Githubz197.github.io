@@ -40,10 +40,16 @@ Mari Kruchkova||https://www.youtube.com/@MariKruchkova/videos||https://assets.pu
 Sarah Roy||https://www.youtube.com/@SarahRoy13/videos||Linktree2/SarahRoy.jpg
 <<
 
->>Linkz
+>>TC
+Pixlr||https://pixlr.com/||https://pixlr.com/img/misc/e-icon.svg
+Photopea||https://photopea.com/||https://www.saashub.com/images/app/service_logos/6/ee81f0100b04/large.png?1526787615
+Photofilters||https://www.photofilters.com/||https://cdn-icons-png.flaticon.com/64/3419/3419172.png
 Pixabay (free images)||https://pixabay.com/||https://cdn-icons-png.flaticon.com/64/6631/6631821.png
 Pexels (free images)||https://www.pexels.com/||https://cdn-icons-png.flaticon.com/64/6631/6631821.png
 UnSplash (free images)||https://unsplash.com/||https://cdn-icons-png.flaticon.com/64/6631/6631821.png
+<<
+
+>>Linkz
 WebViewGold Documentation||https://www.webviewgold.com/docs/android/#setup||https://www.webviewgold.com/docs/android/assets/img/header.png
 Android Icon Generator||https://jgilfelt.github.io/AndroidAssetStudio/icons-launcher.html||https://cdn-icons-png.flaticon.com/64/4436/4436481.png
 Page 404 (copy this)||http://volar.nikadevs.com/content/demo?theme=volar&storefront=envato-elements||https://cdn-icons-png.flaticon.com/64/4436/4436481.png
