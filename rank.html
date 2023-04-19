@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>My Website</title>
+
+<style>
+
+body {
+
+background:
+      radial-gradient(27% 29% at right, #0000 83%,rgba(230, 0, 255, 0.5) 85% 99%,#0000 101%) calc(14px/2) 14px,
+      radial-gradient(27% 29% at left, #0000 83%,rgba(230, 0, 255, 0.5) 85% 99%,#0000 101%) calc(14px/-2) 14px,
+      radial-gradient(29% 27% at top, #0000 83%,rgba(230, 0, 255, 0.5) 85% 99%,#0000 101%) 0 calc(14px/2),
+      radial-gradient(29% 27% at bottom, #0000 83%,rgba(230, 0, 255, 0.5) 85% 99%,#0000 101%) 0 calc(14px/-2)
+      #ffffff;
+background-size: 28px 28px;
+
+@import url('https://fonts.cdnfonts.com/css/bebas-kai');
+text-align: center;
+color: #F0F;
+font-size:50px;
+font-family: 'Bebas Kai', sans-serif;
+
+background: rgb(2,0,36);
+
+}
+    .image-container {
+        float: left;
+        box-sizing: border-box;
+        padding: 5px 5px;
+        margin-bottom: 4px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #ddd;
+        background-color: #f8f8f8;
+        width: 27%; /* Default width */
+        margin-right: 8px; 
+
+-webkit-box-shadow:0px 0px 39px 3px rgba(221,0,255,0.6);
+-moz-box-shadow: 0px 0px 39px 3px rgba(221,0,255,0.6);
+box-shadow: 0px 0px 39px 3px rgba(221,0,255,0.6);
+
+    }
+
+    .image-container img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .image-container h2 {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    /* Media queries */
+    @media only screen and (max-width: 1200px) {
+        .image-container {
+            width: 37.33%; /* Display 3 images per row */
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .image-container {
+            width: 45%; /* Display 2 images per row */
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        .image-container {
+            width: 100%; /* Display 1 image per row */
+        }
+    }
+</style>
+
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			fetch('https://githubz197.github.io/list_of_images.csv')
+			.then(function(response) {
+				return response.text();
+			})
+			.then(function(data) {
+				var rows = data.split("\n");
+				var imageContainers = "";
+				for(var i=0; i<rows.length-1; i++){
+					var cells = rows[i].split(",");
+					var name = cells[0];
+					var imageUrl = cells[1];
+					imageContainers += '<div class="image-container"><img src="' + imageUrl + '" alt="' + name + '"><h2>' + name + '</h2></div>';
+				}
+				document.querySelector('#images').innerHTML = imageContainers;
+			})
+			.catch(function(error) {
+				console.log('Error loading CSV file: ', error);
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1>My Wives</h1>
+	<div id="images"></div>
+
+<div style="clear: both;"></div>
+</body>
+</html>
+
