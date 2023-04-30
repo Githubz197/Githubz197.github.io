@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+    
+  <title>Youtubes - Grid Layout</title>
+  
+  
+  
+  
+<style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+
+.grid-wrapper{
+			--auto-grid-min-size: 16rem;
+			display: grid;
+			grid-gap: 1rem;
+			grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+   font-family: 'Montserrat', sans-serif;
+
+		}
+		.grid-wrapper li{
+			background-color: #333;
+			color: #ffffff;
+			font-size: 24px;
+			list-style-type: none;
+			padding: 2.75rem 1rem;
+			text-align: center;
+			text-transform: capitalize;
+      font-weight: 600;
+		}
+		.main-container{
+			margin: 0 auto;
+			max-width: 1170px;
+			padding:2rem 1rem;
+		}
+</style>
+
+  
+  
+  
+</head>
+
+<body translate="no">
+  <section>
+		<div class="main-container">
+			<ul class="grid-wrapper">
+
+				<li><a href="https://www.youtube.com/@WheatWaffles/videos" target="_blank"><img src="Wheat.jpg"></a></li>
+				<li><a href="https://www.youtube.com/@tailsblackpill/featured" target="_blank"><img src="Tails.jpg"></a></li>
+				<li><a href="https://www.youtube.com/@beautyisontheinside/videos" target="_blank"><img src="TailsFace.jpg"></a></li>
+				<li><a href="https://www.youtube.com/@FACEandLMS/videos" target="_blank"><img src="FaceandLMS.jpg"></a></li>
+				<li><a href="https://www.youtube.com/@IncelTV/videos" target="_blank"><img src="IncelTV.jpg"></a></li>
+				<li><a href="https://www.youtube.com/@manospherehighlightsdaily/videos" target="_blank"><img src="Manosphere.jpg"></a></li>
+				<li><a href="https://www.youtube.com/@JustPearlyThings" target="_blank"><img src="Pearl.jpg"></a></li>
+				<li><a href="https://www.youtube.com/@alexandergrace5350/videos" target="_blank"><img src="Alexander.jpg"></a></li>
+	
+			</ul>
+		</div>
+	</section>
+  
+  </body>
+</html>
