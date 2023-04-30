@@ -10,6 +10,9 @@
   
   
 <style>
+
+body{background-color: #111;}
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 
 .grid-wrapper{
@@ -24,7 +27,7 @@
 
 		}
 		.grid-wrapper li{
-			background-color: #333;
+			background-color: #222;
 			color: #ffffff;
 			font-size: 24px;
 			list-style-type: none;
