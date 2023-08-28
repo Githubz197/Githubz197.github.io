@@ -7,7 +7,7 @@ var update = function () {
   bogotaTime = orlandoTime.clone().tz("America/Mexico_City").subtract(1, 'hour');
   chicagoTime = orlandoTime.clone().tz("Europe/Kiev");
   torontoTime = orlandoTime.clone().tz("Europe/Moscow");
-  dhakaTime = orlandoTime.clone().tz("Asia/Dhaka");
+  dhakaTime = orlandoTime.clone().tz("America/Sao_Paulo");
   londonTime = orlandoTime.clone().tz("Europe/London");
   aguadillaTime = orlandoTime.clone().tz("America/Puerto_Rico");
   
