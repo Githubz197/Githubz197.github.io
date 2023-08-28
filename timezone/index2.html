@@ -155,20 +155,18 @@
     <div class='col-12 col-sm-6 col-md-4 d-flex align-items-center justify-content-center position-relative overflow-hidden location aguadilla'>
       <div class='position-absolute w-100 h-100 bg'></div>
       <div class='location-aguadilla position-relative text-center w-100'>
-      <!--
         <h2 class='time-24 lh-1 mb-0'>
           <span class='hour fw-bolder'></span>
           <span class='colon'>:</span>
           <span class='minute fw-light'></span>
         </h2>
         <span class='time-12 fw-light d-block mb-2'></span>
-        -->
         <h4 class='fw-bold'>
-         <!--  <span class='day me-1'></span> -->
-          <span id="dayofyear"></span>
+          <span class='day me-1'></span>
+          <span class='date'></span>
         </h4>
         <hr class='w-100'>
-        <h3 id="weeknumber" class='fw-light lh-1'>Aguadilla, PRI (AST)</h3>
+        <h3 class='fw-light lh-1'>Aguadilla, PRI (AST)</h3>
       </div>
     </div>
   </div>
@@ -178,31 +176,6 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js'></script>
 <script src='https://assets.codepen.io/319606/moment-timezone-with-data-1970-2030.js'></script><script  src="./script.js"></script>
-
-<script>
-
-const timezones = ["America/Los_Angeles"];
-
-function fetchTimezoneData(timezone) {
-  fetch(`http://worldtimeapi.org/api/timezone/${timezone}`)
-    .then(response => response.json())
-    .then(data => {
-      const weekNumberElement = document.getElementById("weeknumber");
-      const dayOfYearElement = document.getElementById("dayofyear");
-
-      weekNumberElement.textContent = "Week Number: " + data.week_number;
-      dayOfYearElement.textContent = "Day of Year: " + data.day_of_year;
-    })
-    .catch(error => {
-      console.error("Error fetching data:", error);
-    });
-}
-
-timezones.forEach(timezone => {
-  fetchTimezoneData(timezone);
-});
-
-</script>
 
 </body>
 </html>
