@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Multi Time</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/64/5965/5965488.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class='container-fluid h-100'>
+  <div class='row h-100 position-relative'>
+    <div class='position-absolute toggle-wrap d-flex justify-content-end'>
+      <input id='switch' type='checkbox'>
+      <label for='switch'></label>
+    </div>
+    <div class='col-12 col-sm-6 col-md-4 d-flex align-items-center justify-content-center position-relative overflow-hidden location orlando'>
+      <div class='position-absolute w-100 h-100 bg'></div>
+      <div class='location-orlando position-relative text-center w-100'>
+        <h2 class='time-24 lh-1 mb-0'>
+          <span class='hour fw-bolder'></span>
+          <span class='colon'>:</span>
+          <span class='minute fw-light'></span>
+        </h2>
+        <span class='time-12 fw-light d-block mb-2'></span>
+        <h4 class='fw-bold'>
+          <span class='day me-1'></span>
+          <span class='date'></span>
+        </h4>
+        <hr class='w-100'>
+        <h3 class='fw-light lh-1'>San Jose, CA</h3>
+      </div>
+    </div>
+    <div class='col-12 col-sm-6 col-md-4 d-flex align-items-center justify-content-center position-relative overflow-hidden location kiel'>
+      <div class='position-absolute w-100 h-100 bg'></div>
+      <div class='location-kiel position-relative text-center w-100'>
+        <h2 class='time-24 lh-1 mb-0'>
+          <span class='hour fw-bolder'></span>
+          <span class='colon'>:</span>
+          <span class='minute fw-light'></span>
+        </h2>
+        <span class='time-12 fw-light d-block mb-2'></span>
+        <h4 class='fw-bold'>
+          <span class='day me-1'></span>
+          <span class='date'></span>
+        </h4>
+        <hr class='w-100'>
+        <h3 class='fw-light lh-1'>San Juan, Puerto Rico</h3>
+      </div>
+    </div>
+    <div class='col-12 col-sm-6 col-md-4 d-flex align-items-center justify-content-center position-relative overflow-hidden location dubai'>
+      <div class='position-absolute w-100 h-100 bg'></div>
+      <div class='location-dubai position-relative text-center w-100'>
+        <h2 class='time-24 lh-1 mb-0'>
+          <span class='hour fw-bolder'></span>
+          <span class='colon'>:</span>
+          <span class='minute fw-light'></span>
+        </h2>
+        <span class='time-12 fw-light d-block mb-2'></span>
+        <h4 class='fw-bold'>
+          <span class='day me-1'></span>
+          <span class='date'></span>
+        </h4>
+        <hr class='w-100'>
+        <h3 class='fw-light lh-1'>Germany | Spain</h3>
+      </div>
+    </div>
+    <div class='col-12 col-sm-6 col-md-4 d-flex align-items-center justify-content-center position-relative overflow-hidden location bogota'>
+      <div class='position-absolute w-100 h-100 bg'></div>
+      <div class='location-bogota position-relative text-center w-100'>
+        <h2 class='time-24 lh-1 mb-0'>
+          <span class='hour fw-bolder'></span>
+          <span class='colon'>:</span>
+          <span class='minute fw-light'></span>
+        </h2>
+        <span class='time-12 fw-light d-block mb-2'></span>
+        <h4 class='fw-bold'>
+          <span class='day me-1'></span>
+          <span class='date'></span>
+        </h4>
+        <hr class='w-100'>
+        <h3 class='fw-light lh-1'>Mexico City (-1)</h3>
+      </div>
+    </div>
+    <div class='col-12 col-sm-6 col-md-4 d-flex align-items-center justify-content-center position-relative overflow-hidden location chicago'>
+      <div class='position-absolute w-100 h-100 bg'></div>
+      <div class='location-chicago position-relative text-center w-100'>
+        <h2 class='time-24 lh-1 mb-0'>
+          <span class='hour fw-bolder'></span>
+          <span class='colon'>:</span>
+          <span class='minute fw-light'></span>
+        </h2>
+        <span class='time-12 fw-light d-block mb-2'></span>
+        <h4 class='fw-bold'>
+          <span class='day me-1'></span>
+          <span class='date'></span>
+        </h4>
+        <hr class='w-100'>
+        <h3 class='fw-light lh-1'>Lviv, Ukraine</h3>
+      </div>
+    </div>
+    <div class='col-12 col-sm-6 col-md-4 d-flex align-items-center justify-content-center position-relative overflow-hidden location toronto'>
+      <div class='position-absolute w-100 h-100 bg'></div>
+      <div class='location-toronto position-relative text-center w-100'>
+        <h2 class='time-24 lh-1 mb-0'>
+          <span class='hour fw-bolder'></span>
+          <span class='colon'>:</span>
+          <span class='minute fw-light'></span>
+        </h2>
+        <span class='time-12 fw-light d-block mb-2'></span>
+        <h4 class='fw-bold'>
+          <span class='day me-1'></span>
+          <span class='date'></span>
+        </h4>
+        <hr class='w-100'>
+        <h3 class='fw-light lh-1'>Riga, Latvia</h3>
+      </div>
+    </div>
+    <div class='col-12 col-sm-6 col-md-4 d-flex align-items-center justify-content-center position-relative overflow-hidden location london'>
+      <div class='position-absolute w-100 h-100 bg'></div>
+      <div class='location-london position-relative text-center w-100'>
+        <h2 class='time-24 lh-1 mb-0'>
+          <span class='hour fw-bolder'></span>
+          <span class='colon'>:</span>
+          <span class='minute fw-light'></span>
+        </h2>
+        <span class='time-12 fw-light d-block mb-2'></span>
+        <h4 class='fw-bold'>
+          <span class='day me-1'></span>
+          <span class='date'></span>
+        </h4>
+        <hr class='w-100'>
+        <h3 class='fw-light lh-1'>London, GBR (GMT)</h3>
+      </div>
+    </div>
+    <div class='col-12 col-sm-6 col-md-4 d-flex align-items-center justify-content-center position-relative overflow-hidden location dhaka'>
+      <div class='position-absolute w-100 h-100 bg'></div>
+      <div class='location-dhaka position-relative text-center w-100'>
+        <h2 class='time-24 lh-1 mb-0'>
+          <span class='hour fw-bolder'></span>
+          <span class='colon'>:</span>
+          <span class='minute fw-light'></span>
+        </h2>
+        <span class='time-12 fw-light d-block mb-2'></span>
+        <h4 class='fw-bold'>
+          <span class='day me-1'></span>
+          <span class='date'></span>
+        </h4>
+        <hr class='w-100'>
+        <h3 class='fw-light lh-1'>Sao Paulo, Brazil</h3>
+      </div>
+    </div>
+    <div class='col-12 col-sm-6 col-md-4 d-flex align-items-center justify-content-center position-relative overflow-hidden location aguadilla'>
+      <div class='position-absolute w-100 h-100 bg'></div>
+      <div class='location-aguadilla position-relative text-center w-100'>
+        <h2 class='time-24 lh-1 mb-0'>
+          <span class='hour fw-bolder'></span>
+          <span class='colon'>:</span>
+          <span class='minute fw-light'></span>
+        </h2>
+        <span class='time-12 fw-light d-block mb-2'></span>
+        <h4 class='fw-bold'>
+          <span class='day me-1'></span>
+          <span class='date'></span>
+        </h4>
+        <hr class='w-100'>
+        <h3 class='fw-light lh-1'>Aguadilla, PRI (AST)</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js'></script>
+<script src='https://assets.codepen.io/319606/moment-timezone-with-data-1970-2030.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
