@@ -1,1 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSON to HTML Table</title>
+  <style type="text/css">
+    body {
+      background: rgb(2,0,36);
+      background: linear-gradient(322deg, rgba(250,120,215,1) 0%, rgba(20,20,99,1) 100%);
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
+    table.tableizer-table {
+      padding:20px;
+      border-radius:30px;
+      font-size: 14px;
+      text-align: center;
+      border: 1px solid #AACA;
+      background: none;
+      width: 100%;
+      margin: auto; /* Center-align the table */
+    }
+
+    .tableizer-table td, .tableizer-table th {
+border-radius:3px;
+      padding: 4px;
+      margin: 3px;
+      background: rgba(0,0,6,0.5);
+      border: 1px solid #039;
+      color: #FFF;
+    }
+
+    .tableizer-table th {
+      background-color: #104E8B;
+      color: #FFF;
+      font-weight: bold;
+    }
+
+  </style></head>
+<body>
+
+<p id="datetime" style="text-align: center; color: #FFF; font-weight: bold;"></p>
+
+<script>
+  // Get current date and time
+  var now = new Date();
+  var datetime = now.toLocaleString();
+
+  // Insert date and time into HTML
+  document.getElementById("datetime").innerHTML = datetime;
+</script>
+
+<table id="myTable" class="tableizer-table">
+  <thead>
+    <tr class="tableizer-firstrow">
+      <th>Countries</th>
+      <th>.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Table body will be filled dynamically using JavaScript -->
+  </tbody>
+</table>
+
+<script>
+  // Fetch JSON data from the provided URL
+  fetch('https://getpantry.cloud/apiv1/pantry/83d420ad-eec1-4cd6-b880-3cfa88bda583/basket/SpeakyPichito')
+    .then(response => response.json())
+    .then(data => {
+      // Extract Girls array from JSON data
+      const girls = data.Girls;
+      
+      // Get the table body element
+      const tbody = document.querySelector('#myTable tbody');
+      
+      // Loop through the girls array and create table rows
+      girls.forEach(girl => {
+        // Create a table row
+        const row = document.createElement('tr');
+        
+        // Create table data for name and date
+        const nameCell = document.createElement('td');
+        const dateCell = document.createElement('td');
+        
+        // Set text content for name and date cells
+        nameCell.textContent = girl.name;
+        dateCell.textContent = girl.date;
+        
+        // Append cells to the row
+        row.appendChild(nameCell);
+        row.appendChild(dateCell);
+        
+        // Append row to the table body
+        tbody.appendChild(row);
+      });
+    })
+    .catch(error => console.error('Error fetching JSON:', error));
+</script>
+
+</body>
+</html>
