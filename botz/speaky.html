@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,10 +48,15 @@ border-radius:3px;
 <script>
   // Get current date and time
   var now = new Date();
-  var datetime = now.toLocaleString();
+// COMPLETE DATE
+//var datetime = now.toLocaleString();
+  var datetime = now.toLocaleTimeString();
+
+  var TodayDate = (now.getDate()) + '/' + (now.getMonth() + 1);
+
 
   // Insert date and time into HTML
-  document.getElementById("datetime").innerHTML = datetime;
+  document.getElementById("datetime").innerHTML = (TodayDate + ' — ' + datetime);
 </script>
 
 <table id="myTable" class="tableizer-table">
@@ -120,6 +124,19 @@ border-radius:3px;
 </script>
 
 <script>
+////////////////// Highlight TODAY with GREEN
+var now = new Date();
+var day = now.getDate();
+var month = now.getMonth() + 1;
+
+// Add to single-digit months a leading zero
+if (month < 10) {month = '0' + month;}
+
+var Todayz = day + '/' + month;
+var TodayzString = Todayz.toString();
+console.log(TodayzString);
+
+
  // Function to highlight TRs containing the word "Julia"
 function highlightJulia() {
     // Get all <tr> elements
@@ -134,12 +151,36 @@ function highlightJulia() {
             var tdContent = tdElements[j].innerText || tdElements[j].textContent;
             
             // Check if the content of the <td> contains the word "Julia"
-            if (tdContent.includes("Julia")) {
+            if (tdContent.includes(TodayzString)) {
+                // Highlight the <tr> element
+                trElements[i].style.backgroundColor = "lime";
+                // Break the loop as the word "Julia" is found in this row
+                break;
+            }
+
+// Getting yesterday's date
+var yesterday = new Date(now);
+yesterday.setDate(now.getDate() - 1);
+var yesterdayDay = yesterday.getDate();
+var yesterdayMonth = yesterday.getMonth() + 1;
+
+// add single-digit months with a leading zero
+if (yesterdayMonth < 10) {
+    yesterdayMonth = '0' + yesterdayMonth;
+}
+
+var Yesterdayz = yesterdayDay + '/' + yesterdayMonth;
+var YesterdayzString = Yesterdayz.toString();
+console.log("Yesterdayz:", YesterdayzString);
+
+            // Check if the content of the <td> contains Yesterday's Date
+            if (tdContent.includes(YesterdayzString)) {
                 // Highlight the <tr> element
                 trElements[i].style.backgroundColor = "yellow";
                 // Break the loop as the word "Julia" is found in this row
                 break;
             }
+
         }
     }
 }
