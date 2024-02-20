@@ -98,6 +98,8 @@ border-radius:3px;
       });
     })
             .catch(error => {
+                console.error('Error fetching JSON:', error);
+
                 const errorContainer = document.querySelector('#errorContainer');
                 errorContainer.textContent = 'Error fetching JSON: ' + error;
             });
