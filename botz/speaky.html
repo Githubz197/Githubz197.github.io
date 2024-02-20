@@ -64,7 +64,7 @@ border-radius:3px;
     <!-- Table body will be filled dynamically using JavaScript -->
   </tbody>
 </table>
-
+    <div id="errorContainer"></div>
 <script>
   // Fetch JSON data from the provided URL
   fetch('https://getpantry.cloud/apiv1/pantry/83d420ad-eec1-4cd6-b880-3cfa88bda583/basket/SpeakyPichito')
@@ -97,7 +97,10 @@ border-radius:3px;
         tbody.appendChild(row);
       });
     })
-    .catch(error => console.error('Error fetching JSON:', error));
+            .catch(error => {
+                const errorContainer = document.querySelector('#errorContainer');
+                errorContainer.textContent = 'Error fetching JSON: ' + error;
+            });
 </script>
 
 </body>
