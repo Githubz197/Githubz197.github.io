@@ -118,6 +118,43 @@ border-radius:3px;
             });
 
 </script>
+
+<script>
+ // Function to highlight TRs containing the word "Julia"
+function highlightJulia() {
+    // Get all <tr> elements
+    var trElements = document.getElementsByTagName("tr");
+
+    // Loop through each <tr> element
+    for (var i = 0; i < trElements.length; i++) {
+        var tdElements = trElements[i].getElementsByTagName("td");
+        
+        // Loop through each <td> element within the <tr>
+        for (var j = 0; j < tdElements.length; j++) {
+            var tdContent = tdElements[j].innerText || tdElements[j].textContent;
+            
+            // Check if the content of the <td> contains the word "Julia"
+            if (tdContent.includes("Julia")) {
+                // Highlight the <tr> element
+                trElements[i].style.backgroundColor = "yellow";
+                // Break the loop as the word "Julia" is found in this row
+                break;
+            }
+        }
+    }
+}
+
+// Execute the highlighting function every 100 milliseconds for 10 seconds
+var highlightInterval = setInterval(function() {
+    highlightJulia();
+}, 100);
+
+// Stop executing the highlighting function after 10 seconds
+setTimeout(function() {
+    clearInterval(highlightInterval);
+}, 10000);
+
+</script>
  
 </body>
 </html>
