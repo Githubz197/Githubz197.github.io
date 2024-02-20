@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,10 +65,10 @@ border-radius:3px;
     <!-- Table body will be filled dynamically using JavaScript -->
   </tbody>
 </table>
-    <div id="errorContainer" style="text-align: center; color: #FFF; font-weight: bold;"></div>
+    <div id="errorContainer" style="text-align: center; color: #FFF; font-weight: bold;"><img id="loading" width="90" src="https://githubz197.github.io/botz/Spinnerz128px.svg"></div>
 <script>
   // Fetch JSON data from the provided URL
-  fetch('https://getpantry.cloud/apiv1/pantry/83d420ad-eec1-4cd6-b880-3cfa88bda583/basket/SpeakyPichito')
+  fetch('https://api.npoint.io/9b68b707bf7cb36cd090')
     .then(response => response.json())
     .then(data => {
       // Extract Girls array from JSON data
@@ -95,15 +96,27 @@ border-radius:3px;
         
         // Append row to the table body
         tbody.appendChild(row);
+
+    // Get a reference to the image element
+    var img = document.getElementById('loading');
+    // Hide the image by setting its display property to 'none'
+    img.style.display = 'none';
+
       });
     })
             .catch(error => {
-                console.error('Error fetching JSON:', error);
 
+              // Get a reference to the image element
+              var img = document.getElementById('loading');
+              // Hide the image by setting its display property to 'none'
+              img.style.display = 'none';
+
+                console.error('Error fetching JSON:', error);
                 const errorContainer = document.querySelector('#errorContainer');
                 errorContainer.textContent = 'Error fetching JSON: ' + error;
             });
-</script>
 
+</script>
+ 
 </body>
 </html>
