@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gain Calculator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #1C1C1E;
+            color: #FFFFFF;
+            max-width: 450px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            height: 100vh;
+        }
+        h1 {
+            text-align: center;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 24px;
+        }
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 0;
+            flex: 1;
+            padding: 12px;
+            background-color: #2C2C2E;
+            border: 1px solid #3A3A3C;
+            border-radius: 10px;
+            color: #FFFFFF;
+            font-size: 16px;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+        input:focus {
+            outline: none;
+            border-color: #0A84FF;
+        }
+        #results {
+            display: grid;
+            gap: 8px;
+        }
+        .result {
+            background-color: #2C2C2E;
+            border-radius: 10px;
+            padding: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #3A3A3C;
+        }
+        .result-percentage {
+            color: #FFFFFF;
+            font-weight: 500;
+            margin-right: 10px;
+        }
+        .result-price {
+            text-align: right;
+            color: #0A84FF; /* iPhone blue color for price */
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+        }
+        .result-earnings {
+            color: #30D158; /* Green for earnings */
+            font-weight: 500;
+            font-size: 12px;
+            margin-top: 2px;
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1C1C1E;
+            }
+        }
+        .result-details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2px;
+            color: #8E8E93;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gain Calculator</h1>
+    <div class="input-group">
+        <input 
+            type="number" 
+            id="initialPrice" 
+            placeholder="Stock Price" 
+            step="0.01"
+            oninput="calculateGains()"
+        >
+        <input 
+            type="number" 
+            id="investmentAmount" 
+            placeholder="Investment" 
+            step="0.01"
+            oninput="calculateGains()"
+        >
+    </div>
+    
+    <div id="results"></div>
+
+    <script>
+        function calculateGains() {
+            const initialPriceInput = document.getElementById('initialPrice');
+            const investmentAmountInput = document.getElementById('investmentAmount');
+            const resultsDiv = document.getElementById('results');
+            
+            // Parse the input values
+            const initialPrice = parseFloat(initialPriceInput.value);
+            const investmentAmount = parseFloat(investmentAmountInput.value);
+            
+            // Clear results if no input
+            if (isNaN(initialPrice)) {
+                resultsDiv.innerHTML = '';
+                return;
+            }
+
+            const percentages = [20, 33, 40, 50, 66, 75, 100];
+            
+            let resultsHTML = '';
+            
+            percentages.forEach(percentage => {
+                const targetPrice = initialPrice * (1 + (percentage / 100));
+                const gain = targetPrice - initialPrice;
+                
+                // Calculate potential earnings if investment amount is provided
+                let potentialShares = investmentAmount ? Math.floor(investmentAmount / initialPrice) : null;
+                let potentialEarnings = potentialShares ? potentialShares * gain : null;
+                
+                resultsHTML += `
+                    <div class="result">
+                        <div class="result-percentage">${percentage}% Gain</div>
+                        <div class="result-price">
+                            $${targetPrice.toFixed(2)} 
+                            ${potentialEarnings !== null ? `
+                            <div class="result-details">
+                                <span>Shares: ${potentialShares}     </span>
+                                <span class="result-earnings">+$${potentialEarnings.toFixed(2)}</span>
+                            </div>` : `
+                            <div class="result-earnings">+$${gain.toFixed(2)}</div>
+                            `}
+                        </div>
+                    </div>
+                `;
+            });
+
+            resultsDiv.innerHTML = resultsHTML;
+        }
+    </script>
+</body>
+</html>

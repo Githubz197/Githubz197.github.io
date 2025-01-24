@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Russian Flashcards - Extended</title>
+    <style>
+        /* Previous styles remain the same until theme-toggle */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        :root {
+            --bg-color: #1a1a1a;
+            --card-bg: #2d2d2d;
+            --text-color: #ffffff;
+            --secondary-text: #b0b0b0;
+            --border-color: #007AFF;
+            --button-color: #007AFF;
+        }
+
+        [data-theme="light"] {
+            --bg-color: #f0f0f0;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --secondary-text: #666666;
+            --border-color: #007AFF;
+            --button-color: #007AFF;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: var(--text-color);
+            position: relative;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 32px;
+            height: 32px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--text-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .progress {
+            color: var(--secondary-text);
+            margin-bottom: 15px;
+        }
+
+        .flashcard {
+            background: var(--card-bg);
+            height: 300px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.3s ease, background-color 0.3s;
+        }
+
+        .flashcard:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            padding: 20px;
+        }
+
+        .word {
+            font-size: 2.5em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .language {
+            color: var(--secondary-text);
+            font-size: 1.1em;
+        }
+
+        .transcription {
+            color: var(--secondary-text);
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        button:not(.theme-toggle) {
+            padding: 10px 20px;
+            border: 1.5px solid var(--button-color);
+            background: transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: all 0.2s ease;
+            min-width: 110px;
+            min-height: 110px;
+            color: var(--button-color);
+            font-weight: 500;
+        }
+
+        button:not(.theme-toggle):hover {
+            background: var(--button-color);
+            color: white;
+        }
+
+        .instruction {
+            margin-top: 20px;
+            color: var(--secondary-text);
+        }
+
+        .transcription .pronunciation-link {
+            cursor: help;
+            text-decoration: underline;
+            color: var(--secondary-text);
+        }
+        .transcription .pronunciation-link:hover {
+            opacity: 0.8;
+        }
+
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" id="themeToggle">☽</button>
+    <div class="container">
+        <h1>Russian Flashcards</h1>
+        <div class="progress" id="progress">Card 1 of 55</div>
+        <div class="flashcard" id="flashcard">
+            <div class="card-content">
+                <div class="word" id="word">и</div>
+                <div class="language" id="language">Russian</div>
+                <div class="transcription" id="transcription">Pronunciation: [i]</div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="prevBtn">←</button>
+            <button id="resetBtn">↺</button>
+            <button id="nextBtn">→</button>
+        </div>
+        <div class="instruction">Click the card to flip it!</div>
+    </div>
+
+    <script>
+const cards = [
+    // Pronouns and basic words
+    { russian: 'и', english: 'and', transcription: 'i', gender: null },
+    { russian: 'не', english: 'not', transcription: 'ne', gender: null },
+    { russian: 'я', english: 'I', transcription: 'ya', gender: null },
+    { russian: 'быть', english: 'to be', transcription: 'byt\'', gender: null },
+    { russian: 'он', english: 'he', transcription: 'on', gender: 'masculine' },
+    { russian: 'она', english: 'she', transcription: 'ana', gender: 'feminine' },
+    { russian: 'они', english: 'they', transcription: 'ani', gender: null },
+    { russian: 'с', english: 'with', transcription: 's', gender: null },
+    { russian: 'что', english: 'what', transcription: 'chto', gender: null },
+    { russian: 'это', english: 'this/it', transcription: 'eta', gender: null },
+    { russian: 'все', english: 'all/everything', transcription: 'vsye', gender: null },
+    { russian: 'как', english: 'how/like', transcription: 'kak', gender: null },
+    { russian: 'мы', english: 'we', transcription: 'my', gender: null },
+    { russian: 'по', english: 'along/by', transcription: 'po', gender: null },
+    { russian: 'вы', english: 'you (plural/formal)', transcription: 'vy', gender: null },
+    { russian: 'но', english: 'but', transcription: 'no', gender: null },
+    { russian: 'ты', english: 'you (singular/informal)', transcription: 'ty', gender: null },
+    { russian: 'мой', english: 'my', transcription: 'moy', gender: 'masculine' },
+    { russian: 'моя', english: 'my (feminine)', transcription: 'maya', gender: 'feminine', suffix: 'я' },
+    { russian: 'или', english: 'or', transcription: 'ili', gender: null },
+    { russian: 'если', english: 'if', transcription: 'yesli', gender: null },
+    { russian: 'уже', english: 'already', transcription: 'uzhe', gender: null },
+    { russian: 'нет', english: 'no/not', transcription: 'nyet', gender: null },
+
+    // Numbers 1-10
+    { russian: 'один', english: 'one (masculine)', transcription: 'adin', gender: 'masculine' },
+    { russian: 'одна', english: 'one (feminine)', transcription: 'adna', gender: 'feminine' },
+    { russian: 'два', english: 'two (masculine)', transcription: 'dva', gender: 'masculine' },
+    { russian: 'две', english: 'two (feminine)', transcription: 'dve', gender: 'feminine' },
+    { russian: 'три', english: 'three', transcription: 'tri', gender: null },
+    { russian: 'четыре', english: 'four', transcription: 'chityri', gender: null },
+    { russian: 'пять', english: 'five', transcription: 'pyat\'', gender: null },
+    { russian: 'шесть', english: 'six', transcription: 'shest\'', gender: null },
+    { russian: 'семь', english: 'seven', transcription: 'sem\'', gender: null },
+    { russian: 'восемь', english: 'eight', transcription: 'vosem\'', gender: null },
+    { russian: 'девять', english: 'nine', transcription: 'devyat\'', gender: null },
+    { russian: 'десять', english: 'ten', transcription: 'desyat\'', gender: null },
+
+    // Directions
+    { russian: 'лево', english: 'left', transcription: 'lyeva', gender: 'neuter' },
+    { russian: 'право', english: 'right', transcription: 'prava', gender: 'neuter' },
+    { russian: 'середина', english: 'middle', transcription: 'seredina', gender: 'feminine' },
+    { russian: 'вверх', english: 'up', transcription: 'vverkh', gender: null },
+    { russian: 'вниз', english: 'down', transcription: 'vniz', gender: null },
+
+    // People and descriptive words
+    { russian: 'принцесса', english: 'princess', transcription: 'printsessa', gender: 'feminine' },
+    { russian: 'королева', english: 'queen', transcription: 'karalyeva', gender: 'feminine' },
+    { russian: 'красивая', english: 'beautiful (feminine)', transcription: 'krasivaya', gender: 'feminine', suffix: 'ая' },
+    { russian: 'красивый', english: 'beautiful (masculine)', transcription: 'krasivyi', gender: 'masculine', suffix: 'ый' },
+    { russian: 'милая', english: 'cute (feminine)', transcription: 'milaya', gender: 'feminine', suffix: 'ая' },
+    { russian: 'милый', english: 'cute (masculine)', transcription: 'milyi', gender: 'masculine', suffix: 'ый' },
+    { russian: 'панда', english: 'panda', transcription: 'panda', gender: 'feminine' },
+    { russian: 'солнышко', english: 'little sun', transcription: 'solnyshka', gender: 'neuter' },
+    { russian: 'девушка', english: 'girl', transcription: 'devushka', gender: 'feminine' },
+    { russian: 'жена', english: 'wife', transcription: 'zhena', gender: 'feminine' },
+    { russian: 'девочка-подросток', english: 'teen (female)', transcription: 'devochka-padrostok', gender: 'feminine' },
+
+    // Animal words
+    { russian: 'собака', english: 'dog', transcription: 'sabaka', gender: 'feminine' },
+    { russian: 'кошка', english: 'cat', transcription: 'kashka', gender: 'feminine' },
+    { russian: 'котенок', english: 'kitten (masculine)', transcription: 'katenok', gender: 'masculine' },
+    { russian: 'кошечка', english: 'kitten (feminine)', transcription: 'kashechka', gender: 'feminine' },
+    { russian: 'рыба', english: 'fish', transcription: 'ryba', gender: 'feminine' },
+    { russian: 'пес', english: 'male dog', transcription: 'pes', gender: 'masculine' },
+    { russian: 'лошадь', english: 'horse', transcription: 'loshat\'', gender: 'feminine' },
+    { russian: 'корова', english: 'cow', transcription: 'karova', gender: 'feminine' },
+
+    // Transportation words
+    { russian: 'поезд', english: 'train', transcription: 'paezd', gender: 'masculine' },
+    { russian: 'машина', english: 'car', transcription: 'mashina', gender: 'feminine' },
+    { russian: 'велосипед', english: 'bicycle', transcription: 'velesiped', gender: 'masculine' },
+    { russian: 'автобус', english: 'bus', transcription: 'avtobus', gender: 'masculine' },
+    { russian: 'самолет', english: 'airplane', transcription: 'samalyet', gender: 'masculine' },
+    { russian: 'корабль', english: 'ship', transcription: 'karably', gender: 'masculine' },
+    { russian: 'метро', english: 'subway', transcription: 'metro', gender: 'neuter' },
+
+    // Location words
+    { russian: 'город', english: 'city', transcription: 'gorad', gender: 'masculine' },
+    { russian: 'дом', english: 'house', transcription: 'dom', gender: 'masculine' },
+    { russian: 'ресторан', english: 'restaurant', transcription: 'restaran', gender: 'masculine' },
+    { russian: 'школа', english: 'school', transcription: 'shkola', gender: 'feminine' },
+    { russian: 'магазин', english: 'shop', transcription: 'magazin', gender: 'masculine' },
+    { russian: 'церковь', english: 'church', transcription: 'tserkov\'', gender: 'feminine' },
+    { russian: 'страна', english: 'country', transcription: 'strana', gender: 'feminine' },
+    { russian: 'улица', english: 'street', transcription: 'ulitsa', gender: 'feminine' },
+    { russian: 'здание', english: 'building', transcription: 'zdaniye', gender: 'neuter' },
+
+    // Clothing words
+    { russian: 'платье', english: 'dress', transcription: 'plat\'ye', gender: 'neuter' },
+    { russian: 'юбка', english: 'skirt', transcription: 'yubka', gender: 'feminine' },
+    { russian: 'рубашка', english: 'shirt', transcription: 'rubashka', gender: 'feminine' },
+    { russian: 'брюки', english: 'pants', transcription: 'bryuki', gender: 'masculine', plurality: 'plural' },
+    { russian: 'обувь', english: 'shoes', transcription: 'abov\'', gender: 'feminine' },
+    { russian: 'джинсы', english: 'jeans', transcription: 'dzhinsy', gender: 'masculine', plurality: 'plural' },
+    { russian: 'куртка', english: 'jacket', transcription: 'kurtka', gender: 'feminine' },
+    { russian: 'шапка', english: 'hat', transcription: 'shapka', gender: 'feminine' },
+    { russian: 'носки', english: 'socks', transcription: 'noski', gender: 'masculine', plurality: 'plural' },
+
+    // Color words
+    { russian: 'красный', english: 'red (masculine)', transcription: 'krasnyy', gender: 'masculine', suffix: 'ый' },
+    { russian: 'красная', english: 'red (feminine)', transcription: 'krasnaya', gender: 'feminine', suffix: 'ая' },
+    { russian: 'зеленый', english: 'green (masculine)', transcription: 'zelenyy', gender: 'masculine', suffix: 'ый' },
+    { russian: 'зеленая', english: 'green (feminine)', transcription: 'zelenaya', gender: 'feminine', suffix: 'ая' },
+    { russian: 'синий', english: 'blue (masculine)', transcription: 'siniy', gender: 'masculine', suffix: 'ий' },
+    { russian: 'синяя', english: 'blue (feminine)', transcription: 'sinyaya', gender: 'feminine', suffix: 'яя' },
+    { russian: 'черный', english: 'black (masculine)', transcription: 'chernyy', gender: 'masculine', suffix: 'ый' },
+    { russian: 'черная', english: 'black (feminine)', transcription: 'chernaya', gender: 'feminine', suffix: 'ая' },
+    { russian: 'белый', english: 'white (masculine)', transcription: 'belyy', gender: 'masculine', suffix: 'ый' },
+    { russian: 'белая', english: 'white (feminine)', transcription: 'belaya', gender: 'feminine', suffix: 'ая' },
+    { russian: 'желтый', english: 'yellow (masculine)', transcription: 'zheltyy', gender: 'masculine', suffix: 'ый' },
+    { russian: 'желтая', english: 'yellow (feminine)', transcription: 'zheltaya', gender: 'feminine', suffix: 'ая' },
+
+    // People words
+    { russian: 'брат', english: 'brother', transcription: 'brat', gender: 'masculine' },
+    { russian: 'сестра', english: 'sister', transcription: 'sestra', gender: 'feminine' },
+    { russian: 'мать', english: 'mother', transcription: 'mat\'', gender: 'feminine' },
+    { russian: 'отец', english: 'father', transcription: 'atets', gender: 'masculine' },
+    { russian: 'муж', english: 'husband', transcription: 'muzh', gender: 'masculine' },
+    { russian: 'дочь', english: 'daughter', transcription: 'doch\'', gender: 'feminine' },
+    { russian: 'сын', english: 'son', transcription: 'syn', gender: 'masculine' },
+
+    // Job words
+    { russian: 'учитель', english: 'teacher (masculine)', transcription: 'uchitel\'', gender: 'masculine' },
+    { russian: 'учительница', english: 'teacher (feminine)', transcription: 'uchitelnitsa', gender: 'feminine' },
+    { russian: 'студент', english: 'student (masculine)', transcription: 'student', gender: 'masculine' },
+    { russian: 'студентка', english: 'student (feminine)', transcription: 'studentka', gender: 'feminine' },
+    { russian: 'доктор', english: 'doctor (masculine)', transcription: 'doktor', gender: 'masculine' },
+    { russian: 'доктор', english: 'doctor (feminine)', transcription: 'doktor', gender: 'feminine' },
+    { russian: 'священник', english: 'priest (masculine)', transcription: 'svyashchennik', gender: 'masculine' },
+    { russian: 'работа', english: 'job', transcription: 'rabota', gender: 'feminine' },
+    { russian: 'программист', english: 'programmer (masculine)', transcription: 'programmist', gender: 'masculine' },
+    { russian: 'программистка', english: 'programmer (feminine)', transcription: 'programmistka', gender: 'feminine' },
+
+// Society words
+    { russian: 'религия', english: 'religion', transcription: 'religiya', gender: 'feminine' },
+    { russian: 'деньги', english: 'money', transcription: 'den\'gi', gender: 'masculine', plurality: 'plural' },
+    { russian: 'брак', english: 'marriage', transcription: 'brak', gender: 'masculine' },
+    { russian: 'семья', english: 'family', transcription: 'sem\'ya', gender: 'feminine' },
+    { russian: 'закон', english: 'law', transcription: 'zakon', gender: 'masculine' },
+    { russian: 'политика', english: 'politics', transcription: 'politika', gender: 'feminine' },
+
+    // Art words
+    { russian: 'песня', english: 'song', transcription: 'pesnya', gender: 'feminine' },
+    { russian: 'музыка', english: 'music', transcription: 'muzyka', gender: 'feminine' },
+    { russian: 'фильм', english: 'movie', transcription: 'fil\'m', gender: 'masculine' },
+    { russian: 'картина', english: 'picture/painting', transcription: 'kartina', gender: 'feminine' },
+    { russian: 'книга', english: 'book', transcription: 'kniga', gender: 'feminine' },
+    { russian: 'театр', english: 'theater', transcription: 'teatr', gender: 'masculine' },
+    { russian: 'танец', english: 'dance', transcription: 'tanets', gender: 'masculine' },
+
+    // Beverage words
+    { russian: 'кофе', english: 'coffee', transcription: 'kofe', gender: 'masculine' },
+    { russian: 'чай', english: 'tea', transcription: 'chay', gender: 'masculine' },
+    { russian: 'сок', english: 'juice', transcription: 'sok', gender: 'masculine' },
+    { russian: 'вода', english: 'water', transcription: 'voda', gender: 'feminine' },
+    { russian: 'молоко', english: 'milk', transcription: 'malako', gender: 'neuter' },
+    { russian: 'пиво', english: 'beer', transcription: 'pivo', gender: 'neuter' },
+    { russian: 'вино', english: 'wine', transcription: 'vino', gender: 'neuter' },
+
+    // Food words
+    { russian: 'яйцо', english: 'egg', transcription: 'yaytso', gender: 'neuter' },
+    { russian: 'суп', english: 'soup', transcription: 'sup', gender: 'masculine' },
+    { russian: 'курица', english: 'chicken', transcription: 'kuritsa', gender: 'feminine' },
+    { russian: 'говядина', english: 'beef', transcription: 'govyadina', gender: 'feminine' },
+    { russian: 'яблоко', english: 'apple', transcription: 'yablaka', gender: 'neuter' },
+    { russian: 'банан', english: 'banana', transcription: 'banan', gender: 'masculine' },
+    { russian: 'апельсин', english: 'orange', transcription: 'apel\'sin', gender: 'masculine' },
+    { russian: 'завтрак', english: 'breakfast', transcription: 'zavtrak', gender: 'masculine' },
+    { russian: 'обед', english: 'lunch', transcription: 'abed', gender: 'masculine' },
+    { russian: 'ужин', english: 'dinner', transcription: 'uzhin', gender: 'masculine' },
+    { russian: 'еда', english: 'food', transcription: 'yeda', gender: 'feminine' },
+    { russian: 'хлеб', english: 'bread', transcription: 'khleb', gender: 'masculine' },
+    { russian: 'рис', english: 'rice', transcription: 'ris', gender: 'masculine' },
+
+    // Home words
+    { russian: 'кровать', english: 'bed', transcription: 'krovat\'', gender: 'feminine' },
+    { russian: 'ванная', english: 'bathroom', transcription: 'vannaya', gender: 'feminine' },
+    { russian: 'книга', english: 'book', transcription: 'kniga', gender: 'feminine' },
+    { russian: 'стол', english: 'table', transcription: 'stol', gender: 'masculine' },
+    { russian: 'стул', english: 'chair', transcription: 'stul', gender: 'masculine' },
+    { russian: 'окно', english: 'window', transcription: 'akno', gender: 'neuter' },
+    { russian: 'дверь', english: 'door', transcription: 'dver\'', gender: 'feminine' },
+
+    // Body words
+    { russian: 'волосы', english: 'hair', transcription: 'valasy', gender: 'masculine', plurality: 'plural' },
+    { russian: 'глаз', english: 'eye', transcription: 'glaz', gender: 'masculine' },
+    { russian: 'рука', english: 'hand/arm', transcription: 'ruka', gender: 'feminine' },
+    { russian: 'нога', english: 'leg', transcription: 'noga', gender: 'feminine' },
+    { russian: 'голова', english: 'head', transcription: 'galava', gender: 'feminine' },
+    { russian: 'сердце', english: 'heart', transcription: 'serdtse', gender: 'neuter' },
+    { russian: 'рот', english: 'mouth', transcription: 'rot', gender: 'masculine' },
+
+    // Nature words
+    { russian: 'море', english: 'sea', transcription: 'mare', gender: 'neuter' },
+    { russian: 'гора', english: 'mountain', transcription: 'gara', gender: 'feminine' },
+    { russian: 'дождь', english: 'rain', transcription: 'dozh\'', gender: 'masculine' },
+    { russian: 'снег', english: 'snow', transcription: 'sneg', gender: 'masculine' },
+    { russian: 'солнце', english: 'sun', transcription: 'solntse', gender: 'neuter' },
+    { russian: 'луна', english: 'moon', transcription: 'luna', gender: 'feminine' },
+    { russian: 'лес', english: 'forest', transcription: 'les', gender: 'masculine' },
+    { russian: 'озеро', english: 'lake', transcription: 'ozera', gender: 'neuter' },
+    { russian: 'пляж', english: 'beach', transcription: 'plyazh', gender: 'masculine' },
+    { russian: 'ветер', english: 'wind', transcription: 'veter', gender: 'masculine' },
+    { russian: 'облако', english: 'cloud', transcription: 'ablaka', gender: 'neuter' },
+
+    // Time words
+    { russian: 'год', english: 'year', transcription: 'god', gender: 'masculine' },
+    { russian: 'месяц', english: 'month', transcription: 'mesyats', gender: 'masculine' },
+    { russian: 'неделя', english: 'week', transcription: 'nedelya', gender: 'feminine' },
+    { russian: 'день', english: 'day', transcription: 'den\'', gender: 'masculine' },
+    { russian: 'час', english: 'hour', transcription: 'chas', gender: 'masculine' },
+    { russian: 'минута', english: 'minute', transcription: 'minuta', gender: 'feminine' },
+    { russian: 'утро', english: 'morning', transcription: 'utra', gender: 'neuter' },
+    { russian: 'ночь', english: 'night', transcription: 'noch\'', gender: 'feminine' },
+    { russian: 'секунда', english: 'second', transcription: 'sekunda', gender: 'feminine' },
+
+    // Adjectives with gender variations
+    { russian: 'большой', english: 'big (masculine)', transcription: 'bol\'shoy', gender: 'masculine', suffix: 'ой' },
+    { russian: 'большая', english: 'big (feminine)', transcription: 'bol\'shaya', gender: 'feminine', suffix: 'ая' },
+    { russian: 'маленький', english: 'small (masculine)', transcription: 'malen\'kiy', gender: 'masculine', suffix: 'ий' },
+    { russian: 'маленькая', english: 'small (feminine)', transcription: 'malen\'kaya', gender: 'feminine', suffix: 'ая' },
+    { russian: 'медленный', english: 'slow (masculine)', transcription: 'medlennyy', gender: 'masculine', suffix: 'ый' },
+    { russian: 'медленная', english: 'slow (feminine)', transcription: 'medlennaya', gender: 'feminine', suffix: 'ая' },
+    { russian: 'быстрый', english: 'fast (masculine)', transcription: 'bystryy', gender: 'masculine', suffix: 'ый' },
+    { russian: 'быстрая', english: 'fast (feminine)', transcription: 'bystraya', gender: 'feminine', suffix: 'ая' },
+    { russian: 'горячий', english: 'hot (masculine)', transcription: 'goryachiy', gender: 'masculine', suffix: 'ий' },
+    { russian: 'горячая', english: 'hot (feminine)', transcription: 'goryachaya', gender: 'feminine', suffix: 'ая' },
+    { russian: 'холодный', english: 'cold (masculine)', transcription: 'kholodnyy', gender: 'masculine', suffix: 'ый' },
+    { russian: 'холодная', english: 'cold (feminine)', transcription: 'kholodnaya', gender: 'feminine', suffix: 'ая' },
+    { russian: 'молодой', english: 'young (masculine)', transcription: 'molodoy', gender: 'masculine', suffix: 'ой' },
+    { russian: 'молодая', english: 'young (feminine)', transcription: 'molodaya', gender: 'feminine', suffix: 'ая' },
+    { russian: 'старый', english: 'old (masculine)', transcription: 'staryy', gender: 'masculine', suffix: 'ый' },
+    { russian: 'старая', english: 'old (feminine)', transcription: 'staraya', gender: 'feminine', suffix: 'ая' },
+    { russian: 'хороший', english: 'good (masculine)', transcription: 'khoroshiy', gender: 'masculine', suffix: 'ий' },
+    { russian: 'хорошая', english: 'good (feminine)', transcription: 'khoroshaya', gender: 'feminine', suffix: 'ая' },
+    { russian: 'плохой', english: 'bad (masculine)', transcription: 'plokhoy', gender: 'masculine', suffix: 'ой' },
+    { russian: 'плохая', english: 'bad (feminine)', transcription: 'plokhaya', gender: 'feminine', suffix: 'ая' }
+];
+
+const genderStyles = {
+    masculine: '#007AFF', // blue
+    feminine: '#FF69B4', // pink
+    neuter: '#2ECC71'    // green
+};
+
+        let currentCard = 0;
+        let isFlipped = false;
+        let isDarkTheme = true;
+
+        const wordElement = document.getElementById('word');
+        const languageElement = document.getElementById('language');
+        const transcriptionElement = document.getElementById('transcription');
+        const progressElement = document.getElementById('progress');
+        const flashcardElement = document.getElementById('flashcard');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const themeToggle = document.getElementById('themeToggle');
+
+        function updateCard() {
+            const card = cards[currentCard];
+            
+            if (isFlipped) {
+                wordElement.textContent = card.english;
+                languageElement.textContent = 'English';
+                transcriptionElement.style.display = 'none';
+                wordElement.style.color = 'var(--text-color)';
+            } else {
+                let displayWord = card.russian;
+                
+                // Apply gender color if exists
+                if (card.gender) {
+                    transcriptionElement.innerHTML = `Pronunciation: <span class="pronunciation-link" data-word="${card.russian}">[${card.transcription}]</span><br><span style="color:${genderStyles[card.gender]}">Gender: ${card.gender}</span>`;
+                } else {
+                    transcriptionElement.innerHTML = `Pronunciation: <span class="pronunciation-link" data-word="${card.russian}">[${card.transcription}]</span>`;
+                }
+                
+                // Color suffix if exists
+                if (card.suffix) {
+                    const suffixIndex = displayWord.indexOf(card.suffix);
+                    if (suffixIndex !== -1) {
+                        const prefix = displayWord.slice(0, suffixIndex);
+                        const suffix = displayWord.slice(suffixIndex);
+                        displayWord = `${prefix}<span style="color:${card.gender === 'masculine' ? '#007AFF' : '#FF69B4'}">${suffix}</span>`;
+                    }
+                }
+                
+                wordElement.innerHTML = displayWord;
+                languageElement.textContent = 'Russian';
+                transcriptionElement.style.display = 'block';
+            }
+            
+            progressElement.textContent = `Card ${currentCard + 1} of ${cards.length}`;
+            
+            // Add event listener for pronunciation link
+            const pronunciationLinks = document.querySelectorAll('.pronunciation-link');
+            pronunciationLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const word = e.target.getAttribute('data-word');
+                    window.open(`https://forvo.com/word/${encodeURIComponent(word)}/#ru`, '_blank');
+                });
+            });
+        }
+
+        function toggleTheme() {
+            isDarkTheme = !isDarkTheme;
+            document.documentElement.setAttribute('data-theme', isDarkTheme ? 'dark' : 'light');
+            themeToggle.textContent = isDarkTheme ? '☽' : '☀';
+        }
+
+        function flipCard() {
+            isFlipped = !isFlipped;
+            updateCard();
+        }
+
+        function nextCard() {
+            isFlipped = false;
+            currentCard = (currentCard + 1) % cards.length;
+            updateCard();
+        }
+
+        function prevCard() {
+            isFlipped = false;
+            currentCard = (currentCard - 1 + cards.length) % cards.length;
+            updateCard();
+        }
+
+        function resetDeck() {
+            isFlipped = false;
+            currentCard = 0;
+            updateCard();
+        }
+
+        // Event Listeners
+        flashcardElement.addEventListener('click', flipCard);
+        prevBtn.addEventListener('click', prevCard);
+        nextBtn.addEventListener('click', nextCard);
+        resetBtn.addEventListener('click', resetDeck);
+        themeToggle.addEventListener('click', toggleTheme);
+
+        // Initialize
+        updateCard();
+    </script>
+</body>
+</html>
